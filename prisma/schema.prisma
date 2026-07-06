@@ -1,0 +1,159 @@
+// Prisma schema — Orient Auto Export platform
+// SQLite datasource (sandbox-compatible). All list-like fields are stored
+// as JSON strings and parsed in the application layer.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String?
+  role      String   @default("EDITOR") // ADMIN | EDITOR
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Brand {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  country     String    @default("China")
+  logo        String?
+  heroImage   String?
+  founded     Int?
+  description String
+  history     String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  vehicles    Vehicle[]
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  name      String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  vehicles  Vehicle[]
+}
+
+model Vehicle {
+  id            String       @id @default(cuid())
+  slug          String       @unique
+  name          String
+  brandId       String
+  brand         Brand        @relation(fields: [brandId], references: [id])
+  categoryId    String?
+  category      Category?    @relation(fields: [categoryId], references: [id])
+  energyType    String       // EV | HYBRID | PETROL | DIESEL
+  bodyType      String?      // SEDAN | SUV | MPV | PICKUP | COUPE
+  priceUsd      Float
+  image         String?
+  gallery       String       // JSON array of image URLs
+  excerpt       String
+  description   String
+  specs         String       // JSON: engine, transmission, battery, range, horsepower, dimensions, features
+  featured      Boolean      @default(false)
+  published     Boolean      @default(true)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model Lead {
+  id            String   @id @default(cuid())
+  leadId        String   @unique // public-facing Lead ID (e.g. OAE-2025-0001)
+  vehicleSlug   String?
+  brand         String?
+  quantity      Int      @default(1)
+  destinationPort String?
+  paymentPreference String?
+  businessName  String?
+  contactPerson String
+  email         String
+  phone         String?
+  country       String?
+  notes         String?
+  status        String   @default("NEW") // NEW | CONTACTED | QUOTED | WON | LOST
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Article {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  excerpt     String
+  content     String
+  coverImage  String?
+  category    String   @default("News") // Guides | Import Regulations | Vehicle Reviews | News
+  tags        String   // JSON array
+  author      String   @default("Orient Auto Editorial")
+  published   Boolean  @default(true)
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Catalog {
+  id        String   @id @default(cuid())
+  brandId   String?
+  title     String
+  fileUrl   String
+  size      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ShippingRoute {
+  id              String   @id @default(cuid())
+  originPort      String
+  originCountry   String   @default("China")
+  destinationPort String
+  destinationCountry String
+  transitDays     Int
+  incoterms       String   // JSON array e.g. ["FOB","CIF"]
+  frequency       String?
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  company   String?
+  country   String
+  rating    Int      @default(5)
+  quote     String
+  avatar    String?
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model FAQ {
+  id        String   @id @default(cuid())
+  question String
+  answer   String
+  category String   @default("General") // General | Import | Payment | Shipping | Compliance
+  order    Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Media {
+  id        String   @id @default(cuid())
+  url       String
+  alt       String?
+  type      String   @default("image")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
