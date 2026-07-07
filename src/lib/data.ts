@@ -21,8 +21,17 @@ export type {
   PlatformStats,
 };
 
-function safeParseJson<T>(value: string | null | undefined, fallback: T): T {
-  if (!value) return fallback;
+/**
+ * Server-side data accessors using the libSQL client directly.
+ *
+ * This bypasses Prisma to avoid the native query engine's `fs.readdir`
+ * dependency, which is unavailable on Cloudflare Workers.
+ *
+ * All list-type fields stored as JSON strings are parsed here.
+ */
+
+function safeParseJson<T>(value: unknown, fallback: T): T {
+  if (typeof value !== "string") return fallback;
   try {
     return JSON.parse(value) as T;
   } catch {
@@ -30,38 +39,58 @@ function safeParseJson<T>(value: string | null | undefined, fallback: T): T {
   }
 }
 
-/**
- * Wrap a DB query so that if the database is unreachable (e.g. during static
- * build before env vars are loaded, or a transient edge outage), we return
- * a fallback instead of crashing the build/render. The Worker re-renders on
- * the next request with live data.
- */
+/** Wrap a DB query so transient failures return a fallback. */
 async function safeQuery<T>(fallback: T, fn: () => Promise<T>): Promise<T> {
   try {
     return await fn();
   } catch (err) {
     if (process.env.NODE_ENV !== "production") {
-      console.error("[data] query failed, returning fallback:", err instanceof Error ? err.message : err);
+      console.error("[data] query failed:", err instanceof Error ? err.message : err);
     }
     return fallback;
   }
 }
 
+interface DbRow {
+  [key: string]: unknown;
+}
+
+function str(val: unknown): string {
+  return (val as string) ?? "";
+}
+function num(val: unknown): number {
+  return (val as number) ?? 0;
+}
+function maybeStr(val: unknown): string | null {
+  return val == null ? null : String(val);
+}
+function maybeNum(val: unknown): number | null {
+  return val == null ? null : Number(val);
+}
+
 export async function getBrands(): Promise<PublicBrand[]> {
   return safeQuery([], async () => {
-    const brands = await db.brand.findMany({
-      orderBy: { name: "asc" },
-      include: { _count: { select: { vehicles: true } } },
-    });
+    const result = await db.execute(
+      'SELECT id, slug, name, country, founded, description, history FROM "Brand" ORDER BY name ASC'
+    );
+    const brands = result.rows as DbRow[];
+    // Get model counts
+    const countResult = await db.execute(
+      'SELECT "brandId", COUNT(*) as cnt FROM "Vehicle" GROUP BY "brandId"'
+    );
+    const counts = new Map<string, number>();
+    for (const row of countResult.rows as DbRow[]) {
+      counts.set(str(row.brandId), num(row.cnt));
+    }
     return brands.map((b) => ({
-      id: b.id,
-      slug: b.slug,
-      name: b.name,
-      country: b.country,
-      founded: b.founded,
-      description: b.description,
-      history: b.history,
-      modelCount: b._count.vehicles,
+      id: str(b.id),
+      slug: str(b.slug),
+      name: str(b.name),
+      country: str(b.country),
+      founded: maybeNum(b.founded),
+      description: str(b.description),
+      history: maybeStr(b.history),
+      modelCount: counts.get(str(b.id)) ?? 0,
     }));
   });
 }
@@ -71,128 +100,116 @@ export async function getVehicles(opts?: {
   limit?: number;
 }): Promise<PublicVehicle[]> {
   return safeQuery([], async () => {
-    const vehicles = await db.vehicle.findMany({
-      where: {
-        published: true,
-        ...(opts?.featuredOnly ? { featured: true } : {}),
-      },
-      orderBy: [{ featured: "desc" }, { priceUsd: "asc" }],
-      take: opts?.limit,
-      include: { brand: true },
-    });
-    return vehicles.map((v) => ({
-      id: v.id,
-      slug: v.slug,
-      name: v.name,
-      brandId: v.brandId,
-      brandName: v.brand.name,
-      brandSlug: v.brand.slug,
-      categoryId: v.categoryId,
-      energyType: v.energyType,
-      bodyType: v.bodyType,
-      priceUsd: v.priceUsd,
-      image: v.image,
+    const where = opts?.featuredOnly ? ' WHERE "published" = 1 AND "featured" = 1' : ' WHERE "published" = 1';
+    const limit = opts?.limit ? ` LIMIT ${Number(opts.limit)}` : "";
+    const result = await db.execute(
+      `SELECT v.id, v.slug, v.name, v."brandId", v."categoryId", v."energyType", v."bodyType", v."priceUsd", v.image, v.gallery, v.excerpt, v.description, v.specs, v.featured, b.name as "brandName", b.slug as "brandSlug" FROM "Vehicle" v JOIN "Brand" b ON v."brandId" = b.id${where} ORDER BY v.featured DESC, v."priceUsd" ASC${limit}`
+    );
+    return (result.rows as DbRow[]).map((v) => ({
+      id: str(v.id),
+      slug: str(v.slug),
+      name: str(v.name),
+      brandId: str(v.brandId),
+      brandName: str(v.brandName),
+      brandSlug: str(v.brandSlug),
+      categoryId: maybeStr(v.categoryId),
+      energyType: str(v.energyType),
+      bodyType: maybeStr(v.bodyType),
+      priceUsd: num(v.priceUsd),
+      image: maybeStr(v.image),
       gallery: safeParseJson<string[]>(v.gallery, []),
-      excerpt: v.excerpt,
-      description: v.description,
+      excerpt: str(v.excerpt),
+      description: str(v.description),
       specs: safeParseJson<PublicSpec>(v.specs, {}),
-      featured: v.featured,
+      featured: Boolean(v.featured),
     }));
   });
 }
 
 export async function getShippingRoutes(): Promise<PublicShippingRoute[]> {
   return safeQuery([], async () => {
-    const routes = await db.shippingRoute.findMany({
-      orderBy: [{ destinationCountry: "asc" }, { transitDays: "asc" }],
-    });
-    return routes.map((r) => ({
-      id: r.id,
-      originPort: r.originPort,
-      originCountry: r.originCountry,
-      destinationPort: r.destinationPort,
-      destinationCountry: r.destinationCountry,
-      transitDays: r.transitDays,
+    const result = await db.execute(
+      'SELECT id, "originPort", "originCountry", "destinationPort", "destinationCountry", "transitDays", incoterms, frequency, notes FROM "ShippingRoute" ORDER BY "destinationCountry" ASC, "transitDays" ASC'
+    );
+    return (result.rows as DbRow[]).map((r) => ({
+      id: str(r.id),
+      originPort: str(r.originPort),
+      originCountry: str(r.originCountry),
+      destinationPort: str(r.destinationPort),
+      destinationCountry: str(r.destinationCountry),
+      transitDays: num(r.transitDays),
       incoterms: safeParseJson<string[]>(r.incoterms, []),
-      frequency: r.frequency,
-      notes: r.notes,
+      frequency: maybeStr(r.frequency),
+      notes: maybeStr(r.notes),
     }));
   });
 }
 
 export async function getTestimonials(): Promise<PublicTestimonial[]> {
   return safeQuery([], async () => {
-    const testimonials = await db.testimonial.findMany({
-      where: { published: true },
-      orderBy: { createdAt: "desc" },
-    });
-    return testimonials.map((t) => ({
-      id: t.id,
-      name: t.name,
-      company: t.company,
-      country: t.country,
-      rating: t.rating,
-      quote: t.quote,
+    const result = await db.execute(
+      'SELECT id, name, company, country, rating, quote FROM "Testimonial" WHERE published = 1 ORDER BY "createdAt" DESC'
+    );
+    return (result.rows as DbRow[]).map((t) => ({
+      id: str(t.id),
+      name: str(t.name),
+      company: maybeStr(t.company),
+      country: str(t.country),
+      rating: num(t.rating),
+      quote: str(t.quote),
     }));
   });
 }
 
 export async function getFaqs(): Promise<PublicFaq[]> {
   return safeQuery([], async () => {
-    const faqs = await db.fAQ.findMany({
-      orderBy: [{ order: "asc" }, { createdAt: "asc" }],
-    });
-    return faqs.map((f) => ({
-      id: f.id,
-      question: f.question,
-      answer: f.answer,
-      category: f.category,
-      order: f.order,
+    const result = await db.execute(
+      'SELECT id, question, answer, category, "order" FROM "FAQ" ORDER BY "order" ASC, "createdAt" ASC'
+    );
+    return (result.rows as DbRow[]).map((f) => ({
+      id: str(f.id),
+      question: str(f.question),
+      answer: str(f.answer),
+      category: str(f.category),
+      order: num(f.order),
     }));
   });
 }
 
 export async function getArticles(opts?: { limit?: number }): Promise<PublicArticle[]> {
   return safeQuery([], async () => {
-    const articles = await db.article.findMany({
-      where: { published: true },
-      orderBy: { publishedAt: "desc" },
-      take: opts?.limit,
-    });
-    return articles.map((a) => ({
-      id: a.id,
-      slug: a.slug,
-      title: a.title,
-      excerpt: a.excerpt,
-      content: a.content,
-      coverImage: a.coverImage,
-      category: a.category,
+    const limit = opts?.limit ? ` LIMIT ${Number(opts.limit)}` : "";
+    const result = await db.execute(
+      `SELECT id, slug, title, excerpt, content, "coverImage", category, tags, author, "publishedAt" FROM "Article" WHERE published = 1 ORDER BY "publishedAt" DESC${limit}`
+    );
+    return (result.rows as DbRow[]).map((a) => ({
+      id: str(a.id),
+      slug: str(a.slug),
+      title: str(a.title),
+      excerpt: str(a.excerpt),
+      content: str(a.content),
+      coverImage: maybeStr(a.coverImage),
+      category: str(a.category),
       tags: safeParseJson<string[]>(a.tags, []),
-      author: a.author,
-      publishedAt: a.publishedAt.toISOString(),
+      author: str(a.author),
+      publishedAt: new Date(str(a.publishedAt)).toISOString(),
     }));
   });
 }
 
 export async function getPlatformStats(): Promise<PlatformStats> {
   return safeQuery(
-    {
-      vehicleCount: 0,
-      brandCount: 0,
-      routeCount: 0,
-      yearsInTrade: new Date().getFullYear() - 2017,
-    },
+    { vehicleCount: 0, brandCount: 0, routeCount: 0, yearsInTrade: new Date().getFullYear() - 2017 },
     async () => {
-      const [vehicleCount, brandCount, routeCount] = await Promise.all([
-        db.vehicle.count({ where: { published: true } }),
-        db.brand.count(),
-        db.shippingRoute.count(),
+      const [vehicles, brands, routes] = await Promise.all([
+        db.execute('SELECT COUNT(*) as cnt FROM "Vehicle" WHERE published = 1'),
+        db.execute('SELECT COUNT(*) as cnt FROM "Brand"'),
+        db.execute('SELECT COUNT(*) as cnt FROM "ShippingRoute"'),
       ]);
       return {
-        vehicleCount,
-        brandCount,
-        routeCount,
-        // Orient Auto Export established 2017
+        vehicleCount: num((vehicles.rows[0] as DbRow).cnt),
+        brandCount: num((brands.rows[0] as DbRow).cnt),
+        routeCount: num((routes.rows[0] as DbRow).cnt),
         yearsInTrade: new Date().getFullYear() - 2017,
       };
     }

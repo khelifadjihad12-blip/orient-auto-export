@@ -1,59 +1,50 @@
-import { PrismaClient } from "@prisma/client/edge";
-import { PrismaLibSql } from "@prisma/adapter-libsql";
-import { createClient } from "@libsql/client";
+import { createClient, type Client } from "@libsql/client";
 
 /**
- * Prisma client singleton — edge-runtime safe.
+ * Direct libSQL client for Turso / Cloudflare Workers.
  *
- * Uses the EDGE build of @prisma/client (no native query engine, no `fs`
- * calls) with the libSQL adapter over HTTP. This is the only combination
- * that works on Cloudflare Workers, where there is no filesystem.
+ * Bypasses Prisma entirely to avoid the native query engine's `fs.readdir`
+ * dependency, which is unavailable on Cloudflare Workers (no filesystem).
  *
- * Both local development and production use Turso (libsql://) as the
- * database — the edge build + libSQL adapter works identically in both
- * environments. To use a local file: SQLite instead, see the note in
- * the README about the `db:local` alternative.
+ * The libSQL client speaks HTTP to Turso and works perfectly on the edge.
+ * All data-access functions in src/lib/data.ts use this client directly
+ * with type-safe row mapping.
  *
- * Data-access functions in src/lib/data.ts wrap every query in safeQuery()
- * which returns an empty fallback on DB errors, so `next build` / the
- * OpenNext build can complete even when DATABASE_URL isn't configured yet.
+ * For local development, the same client works against both:
+ *   - Local file: SQLite (DATABASE_URL="file:./db/custom.db")
+ *   - Remote Turso (DATABASE_URL="libsql://...")
  */
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
+
+const globalForLibsql = globalThis as unknown as {
+  libsqlClient: Client | undefined;
 };
 
-function createPrismaClient(): PrismaClient {
+function createLibsqlClient(): Client {
   const url = process.env.DATABASE_URL;
   if (!url) {
     throw new Error("DATABASE_URL is not set");
   }
-
-  const libsql = createClient({
+  return createClient({
     url,
     authToken: process.env.DATABASE_AUTH_TOKEN,
   });
-  const adapter = new PrismaLibSql(libsql);
-  return new PrismaClient({ adapter, log: ["error", "warn"] });
 }
 
-/** Lazily-created singleton. */
-export function getDb(): PrismaClient {
-  if (globalForPrisma.prisma) return globalForPrisma.prisma;
-  const client = createPrismaClient();
+export function getDb(): Client {
+  if (globalForLibsql.libsqlClient) return globalForLibsql.libsqlClient;
+  const client = createLibsqlClient();
   if (process.env.NODE_ENV !== "production") {
-    globalForPrisma.prisma = client;
+    globalForLibsql.libsqlClient = client;
   }
   return client;
 }
 
 /**
- * `db` is a lazy delegate: importing it never touches Prisma. The real client
- * is built on the first property access via getDb(). This keeps `next build`
- * (which imports every module) from crashing when DATABASE_URL isn't loaded
- * yet during static generation.
+ * `db` is a lazy delegate: importing it never touches the database.
+ * The real client is built on the first property access via getDb().
  */
-export const db: PrismaClient = new Proxy(
-  function () {} as unknown as PrismaClient,
+export const db: Client = new Proxy(
+  {} as Client,
   {
     get(_target, prop) {
       const client = getDb();

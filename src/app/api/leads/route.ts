@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { z } from "zod";
+import { randomUUID } from "crypto";
 
 const leadSchema = z.object({
   vehicleSlug: z.string().max(120).optional().nullable(),
@@ -20,10 +21,12 @@ const leadSchema = z.object({
 async function generateLeadId(): Promise<string> {
   const year = new Date().getFullYear();
   const prefix = `OAE-${year}-`;
-  const yearStart = new Date(`${year}-01-01T00:00:00Z`);
-  const count = await db.lead.count({
-    where: { createdAt: { gte: yearStart } },
+  const yearStart = new Date(`${year}-01-01T00:00:00Z`).toISOString();
+  const result = await db.execute({
+    sql: 'SELECT COUNT(*) as cnt FROM "Lead" WHERE "createdAt" >= ?',
+    args: [yearStart],
   });
+  const count = Number((result.rows[0] as { cnt: unknown }).cnt) || 0;
   const suffix = String(count + 1).padStart(6, "0");
   return `${prefix}${suffix}`;
 }
@@ -46,36 +49,36 @@ export async function POST(request: Request) {
 
   const data = parsed.data;
   const leadId = await generateLeadId();
+  const id = randomUUID();
+  const now = new Date().toISOString();
 
   try {
-    const lead = await db.lead.create({
-      data: {
+    await db.execute({
+      sql: `INSERT INTO "Lead" ("id", "leadId", "vehicleSlug", "brand", "quantity", "destinationPort", "paymentPreference", "businessName", "contactPerson", "email", "phone", "country", "notes", "status", "createdAt", "updatedAt") VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+      args: [
+        id,
         leadId,
-        vehicleSlug: data.vehicleSlug ?? null,
-        brand: data.brand ?? null,
-        quantity: data.quantity,
-        destinationPort: data.destinationPort ?? null,
-        paymentPreference: data.paymentPreference ?? null,
-        businessName: data.businessName ?? null,
-        contactPerson: data.contactPerson,
-        email: data.email,
-        phone: data.phone ?? null,
-        country: data.country ?? null,
-        notes: data.notes ?? null,
-        status: "NEW",
-      },
+        data.vehicleSlug ?? null,
+        data.brand ?? null,
+        data.quantity,
+        data.destinationPort ?? null,
+        data.paymentPreference ?? null,
+        data.businessName ?? null,
+        data.contactPerson,
+        data.email,
+        data.phone ?? null,
+        data.country ?? null,
+        data.notes ?? null,
+        "NEW",
+        now,
+        now,
+      ],
     });
 
-    // Admin notification hook (wire to Resend in production)
-    console.log(`[leads] New lead ${lead.leadId} from ${lead.email}`);
+    console.log(`[leads] New lead ${leadId} from ${data.email}`);
 
     return NextResponse.json(
-      {
-        success: true,
-        leadId: lead.leadId,
-        id: lead.id,
-        createdAt: lead.createdAt,
-      },
+      { success: true, leadId, id, createdAt: now },
       { status: 201 }
     );
   } catch (err) {
@@ -86,11 +89,10 @@ export async function POST(request: Request) {
 
 export async function GET() {
   try {
-    const leads = await db.lead.findMany({
-      orderBy: { createdAt: "desc" },
-      take: 100,
-    });
-    return NextResponse.json({ leads });
+    const result = await db.execute(
+      'SELECT * FROM "Lead" ORDER BY "createdAt" DESC LIMIT 100'
+    );
+    return NextResponse.json({ leads: result.rows });
   } catch (err) {
     console.error("[leads] list failed", err);
     return NextResponse.json({ error: "Failed to fetch leads" }, { status: 500 });
