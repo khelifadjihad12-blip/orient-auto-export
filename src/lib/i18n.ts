@@ -41,8 +41,8 @@ const en: Dict = {
   "hero.stat.routes": "Active Routes",
   "hero.stat.years": "Years in Trade",
 
-  "trust.title": "Authorised Chinese Manufacturers",
-  "trust.subtitle":
+  "brands.strip.title": "Authorised Chinese Manufacturers",
+  "brands.strip.subtitle":
     "We source directly from the brands shaping the global future of mobility — and only from authorised channels.",
 
   "vehicles.eyebrow": "Featured Inventory",
@@ -396,8 +396,8 @@ const fr: Dict = {
   "hero.stat.routes": "Routes Actives",
   "hero.stat.years": "Années de Commerce",
 
-  "trust.title": "Constructeurs Chinois Agréés",
-  "trust.subtitle":
+  "brands.strip.title": "Constructeurs Chinois Agréés",
+  "brands.strip.subtitle":
     "Nous sourçons directement auprès des marques qui façonnent la mobilité mondiale — et uniquement via des canaux autorisés.",
 
   "vehicles.eyebrow": "Inventaire en Vedette",
@@ -744,8 +744,8 @@ const ar: Dict = {
   "hero.stat.routes": "مسار نشط",
   "hero.stat.years": "سنوات في التجارة",
 
-  "trust.title": "مصنّعون صينيون معتمدون",
-  "trust.subtitle":
+  "brands.strip.title": "مصنّعون صينيون معتمدون",
+  "brands.strip.subtitle":
     "ن source مباشرة من العلامات التي تشكّل مستقبل التنقل العالمي — ومن قنوات معتمدة فقط.",
 
   "vehicles.eyebrow": "مخزون مميز",

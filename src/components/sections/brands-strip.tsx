@@ -15,7 +15,7 @@ export function BrandsStrip({ brands }: { brands: PublicBrand[] }) {
         <RevealGroup className="flex flex-col items-center gap-8">
           <RevealItem>
             <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              {t("trust.title")}
+              {t("brands.strip.title")}
             </p>
           </RevealItem>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 sm:gap-x-12">
@@ -32,7 +32,7 @@ export function BrandsStrip({ brands }: { brands: PublicBrand[] }) {
           </div>
           <RevealItem>
             <p className="max-w-2xl text-center text-sm text-muted-foreground">
-              {t("trust.subtitle")}
+              {t("brands.strip.subtitle")}
             </p>
           </RevealItem>
         </RevealGroup>

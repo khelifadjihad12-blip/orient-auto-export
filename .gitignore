@@ -57,3 +57,9 @@ server.log
 # Database (SQLite is a build artifact — regenerate with `bun run db:push && bun run seed.ts`)
 /db/*.db
 /db/*.db-journal
+
+# Cloudflare / OpenNext build output
+/.open-next/
+/.wrangler/
+/.dev.vars
+/.dev.vars.*

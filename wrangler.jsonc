@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "orient-auto-export",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2024-09-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://orient-auto-export.workers.dev"
+  },
+  // Set these as secrets or via the Cloudflare dashboard:
+  //   DATABASE_URL        — your Turso libsql:// URL
+  //   DATABASE_AUTH_TOKEN — your Turso access token
+  //   NEXT_PUBLIC_WHATSAPP_NUMBER — e.g. 85259874400
+  "observability": {
+    "enabled": true
+  }
+}

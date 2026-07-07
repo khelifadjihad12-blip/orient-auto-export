@@ -164,11 +164,77 @@ All `POST` endpoints validate input with **Zod** and return `422` with structure
 
 ## 🧭 Deployment Guide
 
-1. **Database** — point `DATABASE_URL` at your managed PostgreSQL (or keep SQLite for small deployments). Run `bun run db:push`.
-2. **Email** — set `RESEND_API_KEY`, `ADMIN_EMAIL`, `FROM_EMAIL` to wire `/api/leads` and `/api/contact` to Resend (currently logs to console).
-3. **Storage** — set Cloudinary (or S3) credentials and migrate `image` fields to uploaded URLs.
-4. **Auth** — set `NEXTAUTH_SECRET` and `NEXTAUTH_URL` to enable the admin dashboard (Editors/Admins roles already in the schema).
-5. **Deploy** — Vercel recommended: `next build` produces a standalone output. Set the env vars in the Vercel project settings.
+### Option A — Cloudflare Workers (recommended, edge-deployed)
+
+The project is preconfigured for Cloudflare via [`@opennextjs/cloudflare`](https://opennext.js.org/cloudflare).
+Because Cloudflare's edge runtime has no filesystem, the local SQLite file
+won't work there — the production database is **Turso** (SQLite-at-the-edge,
+fully Prisma-compatible, same schema).
+
+**1. Create a Turso database** (free tier available):
+
+```bash
+# Install the Turso CLI
+curl -sSfL https://get.tur.so/install.sh | bash
+
+# Log in and create a database
+turso auth login
+turso db create orient-auto-export --location fra
+
+# Get your connection URL and access token
+turso db show orient-auto-export --url         # → libsql://orient-auto-export-<you>.turso.io
+turso db tokens create orient-auto-export      # → <long token string>
+```
+
+**2. Push the schema & seed Turso** (run locally with the Turso URL):
+
+```bash
+# Temporarily point your local .env at Turso to push the schema + seed
+DATABASE_URL="libsql://orient-auto-export-<you>.turso.io" \
+DATABASE_AUTH_TOKEN="<token>" \
+bun run db:push
+
+DATABASE_URL="libsql://orient-auto-export-<you>.turso.io" \
+DATABASE_AUTH_TOKEN="<token>" \
+bun run seed.ts
+```
+
+**3. Deploy to Cloudflare** (two ways):
+
+- **CLI** — `bun run cf:deploy` (runs `opennextjs-cloudflare build && deploy`)
+- **Dashboard** — Cloudflare → Workers & Pages → Create → Connect to Git →
+  select your GitHub repo. Build command: `npx opennextjs-cloudflare build`.
+  Output directory: `.open-next`.
+
+**4. Set environment variables** in the Cloudflare dashboard
+(Workers & Pages → your worker → Settings → Variables):
+
+| Variable | Value |
+|----------|-------|
+| `DATABASE_URL` | `libsql://orient-auto-export-<you>.turso.io` |
+| `DATABASE_AUTH_TOKEN` | `<turso token>` (mark as **secret**) |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | `85259874400` |
+| `NEXT_PUBLIC_SITE_URL` | `https://orient-auto-export.<subdomain>.workers.dev` |
+
+That's it — your site is live on Cloudflare's global edge network. 🚀
+
+### Option B — Vercel / Node.js (classic)
+
+1. **Database** — keep SQLite for small deployments or point `DATABASE_URL` at PostgreSQL. Run `bun run db:push`.
+2. **Email** — set `RESEND_API_KEY`, `ADMIN_EMAIL`, `FROM_EMAIL`.
+3. **Deploy** — `next build` produces a standalone output. Set env vars in the Vercel project settings.
+
+---
+
+## ☁️ Cloudflare scripts
+
+| Script | Purpose |
+|--------|---------|
+| `bun run cf:build` | Build the Cloudflare Worker (`.open-next/worker.js`) |
+| `bun run cf:preview` | Build + run locally via Wrangler dev server |
+| `bun run cf:deploy` | Build + deploy to Cloudflare Workers |
+
+First-time CLI deploy requires `npx wrangler login` to authenticate with your Cloudflare account.
 
 ---
 
