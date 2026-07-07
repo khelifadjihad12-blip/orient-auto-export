@@ -1,22 +1,18 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client/edge";
 import { PrismaLibSql } from "@prisma/adapter-libsql";
 import { createClient } from "@libsql/client";
 
 /**
- * Prisma client singleton.
+ * Prisma client singleton — edge-runtime safe.
  *
- * Two modes, selected automatically by the DATABASE_URL scheme:
+ * Uses the EDGE build of @prisma/client (no native query engine, no `fs`
+ * calls) with the libSQL adapter over HTTP. This is the only combination
+ * that works on Cloudflare Workers, where there is no filesystem.
  *
- *   1. Local development — DATABASE_URL="file:./db/custom.db"
- *      Uses the standard PrismaClient with the built-in SQLite driver
- *      (the libSQL adapter does not support file: URLs).
- *
- *   2. Production (Turso / Cloudflare) — DATABASE_URL="libsql://..."
- *      Uses the libSQL adapter over HTTP, which works on serverless edge
- *      runtimes (Cloudflare Workers) where there is no filesystem.
- *
- * The Prisma schema stays 100% identical for both modes — only the
- * connection mechanism changes.
+ * Both local development and production use Turso (libsql://) as the
+ * database — the edge build + libSQL adapter works identically in both
+ * environments. To use a local file: SQLite instead, see the note in
+ * the README about the `db:local` alternative.
  *
  * Data-access functions in src/lib/data.ts wrap every query in safeQuery()
  * which returns an empty fallback on DB errors, so `next build` / the
@@ -32,20 +28,12 @@ function createPrismaClient(): PrismaClient {
     throw new Error("DATABASE_URL is not set");
   }
 
-  // Remote libSQL / Turso / HTTP URLs → use the libSQL adapter (edge-safe).
-  if (url.startsWith("libsql:") || url.startsWith("http:") || url.startsWith("https:")) {
-    const libsql = createClient({
-      url,
-      authToken: process.env.DATABASE_AUTH_TOKEN,
-    });
-    const adapter = new PrismaLibSql(libsql);
-    return new PrismaClient({ adapter, log: ["error", "warn"] });
-  }
-
-  // Local file: URL → standard PrismaClient (built-in SQLite driver).
-  // Set the env var so Prisma's internal engine resolves the datasource.
-  process.env.DATABASE_URL = url;
-  return new PrismaClient({ log: ["error", "warn"] });
+  const libsql = createClient({
+    url,
+    authToken: process.env.DATABASE_AUTH_TOKEN,
+  });
+  const adapter = new PrismaLibSql(libsql);
+  return new PrismaClient({ adapter, log: ["error", "warn"] });
 }
 
 /** Lazily-created singleton. */
