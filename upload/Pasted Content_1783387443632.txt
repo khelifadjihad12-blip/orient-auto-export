@@ -1,0 +1,1022 @@
+2026-07-07T00:55:46.307Z	Initializing build environment...
+2026-07-07T00:55:47.865Z	Success: Finished initializing build environment
+2026-07-07T00:55:48.434Z	Cloning repository...
+2026-07-07T00:55:50.716Z	Restoring from dependencies cache
+2026-07-07T00:55:50.718Z	Restoring from build output cache
+2026-07-07T00:55:50.721Z	Detected the following tools from environment: bun@1.2.15, nodejs@22.16.0
+2026-07-07T00:55:50.854Z	Installing project dependencies: bun install --frozen-lockfile
+2026-07-07T00:55:52.645Z	bun install v1.2.15 (df017990)
+2026-07-07T00:56:13.677Z	
+2026-07-07T00:56:13.677Z	+ @opennextjs/cloudflare@1.20.1
+2026-07-07T00:56:13.677Z	+ @tailwindcss/postcss@4.1.18
+2026-07-07T00:56:13.677Z	+ @types/react@19.2.8
+2026-07-07T00:56:13.678Z	+ @types/react-dom@19.2.3
+2026-07-07T00:56:13.678Z	+ bun-types@1.3.6
+2026-07-07T00:56:13.678Z	+ eslint@9.39.2
+2026-07-07T00:56:13.678Z	+ eslint-config-next@16.1.3
+2026-07-07T00:56:13.679Z	+ tailwindcss@4.1.18
+2026-07-07T00:56:13.679Z	+ tw-animate-css@1.4.0
+2026-07-07T00:56:13.679Z	+ typescript@5.9.3
+2026-07-07T00:56:13.679Z	+ wrangler@4.107.0
+2026-07-07T00:56:13.679Z	+ @dnd-kit/core@6.3.1
+2026-07-07T00:56:13.679Z	+ @dnd-kit/sortable@10.0.0
+2026-07-07T00:56:13.679Z	+ @dnd-kit/utilities@3.2.2
+2026-07-07T00:56:13.680Z	+ @hookform/resolvers@5.2.2
+2026-07-07T00:56:13.680Z	+ @libsql/client@0.17.4
+2026-07-07T00:56:13.680Z	+ @mdxeditor/editor@3.52.3
+2026-07-07T00:56:13.680Z	+ @prisma/adapter-libsql@7.8.0
+2026-07-07T00:56:13.681Z	+ @prisma/client@6.19.2
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-accordion@1.2.12
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-alert-dialog@1.1.15
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-aspect-ratio@1.1.8
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-avatar@1.1.11
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-checkbox@1.3.3
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-collapsible@1.1.12
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-context-menu@2.2.16
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-dialog@1.1.15
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-dropdown-menu@2.1.16
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-hover-card@1.1.15
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-label@2.1.8
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-menubar@1.1.16
+2026-07-07T00:56:13.683Z	+ @radix-ui/react-navigation-menu@1.2.14
+2026-07-07T00:56:13.683Z	+ @radix-ui/react-popover@1.1.15
+2026-07-07T00:56:13.683Z	+ @radix-ui/react-progress@1.1.8
+2026-07-07T00:56:13.683Z	+ @radix-ui/react-radio-group@1.3.8
+2026-07-07T00:56:13.683Z	+ @radix-ui/react-scroll-area@1.2.10
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-select@2.2.6
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-separator@1.1.8
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-slider@1.3.6
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-slot@1.2.4
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-switch@1.2.6
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-tabs@1.1.13
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-toast@1.2.15
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-toggle@1.1.10
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-toggle-group@1.1.11
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-tooltip@1.2.8
+2026-07-07T00:56:13.684Z	+ @reactuses/core@6.1.9
+2026-07-07T00:56:13.684Z	+ @tanstack/react-query@5.90.19
+2026-07-07T00:56:13.684Z	+ @tanstack/react-table@8.21.3
+2026-07-07T00:56:13.684Z	+ class-variance-authority@0.7.1
+2026-07-07T00:56:13.685Z	+ clsx@2.1.1
+2026-07-07T00:56:13.685Z	+ cmdk@1.1.1
+2026-07-07T00:56:13.685Z	+ date-fns@4.1.0
+2026-07-07T00:56:13.685Z	+ embla-carousel-react@8.6.0
+2026-07-07T00:56:13.685Z	+ framer-motion@12.26.2
+2026-07-07T00:56:13.685Z	+ input-otp@1.4.2
+2026-07-07T00:56:13.685Z	+ lucide-react@0.525.0
+2026-07-07T00:56:13.685Z	+ next@16.1.3
+2026-07-07T00:56:13.685Z	+ next-auth@4.24.13
+2026-07-07T00:56:13.685Z	+ next-intl@4.7.0
+2026-07-07T00:56:13.685Z	+ next-themes@0.4.6
+2026-07-07T00:56:13.685Z	+ prisma@6.19.2
+2026-07-07T00:56:13.685Z	+ react@19.2.3
+2026-07-07T00:56:13.686Z	+ react-day-picker@9.13.0
+2026-07-07T00:56:13.686Z	+ react-dom@19.2.3
+2026-07-07T00:56:13.686Z	+ react-hook-form@7.71.1
+2026-07-07T00:56:13.687Z	+ react-markdown@10.1.0
+2026-07-07T00:56:13.687Z	+ react-resizable-panels@3.0.6
+2026-07-07T00:56:13.687Z	+ react-syntax-highlighter@15.6.6
+2026-07-07T00:56:13.687Z	+ recharts@2.15.4
+2026-07-07T00:56:13.687Z	+ sharp@0.34.5
+2026-07-07T00:56:13.688Z	+ sonner@2.0.7
+2026-07-07T00:56:13.688Z	+ tailwind-merge@3.4.0
+2026-07-07T00:56:13.688Z	+ tailwindcss-animate@1.0.7
+2026-07-07T00:56:13.688Z	+ uuid@11.1.0
+2026-07-07T00:56:13.688Z	+ vaul@1.1.2
+2026-07-07T00:56:13.688Z	+ z-ai-web-dev-sdk@0.0.18
+2026-07-07T00:56:13.688Z	+ zod@4.3.5
+2026-07-07T00:56:13.688Z	+ zustand@5.0.10
+2026-07-07T00:56:13.688Z	
+2026-07-07T00:56:13.688Z	1106 packages installed [21.11s]
+2026-07-07T00:56:13.846Z	Executing user build command: bun run build
+2026-07-07T00:56:13.966Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:15.835Z	
+2026-07-07T00:56:15.835Z	┌─────────────────────────────┐
+2026-07-07T00:56:15.835Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:15.835Z	└─────────────────────────────┘
+2026-07-07T00:56:15.835Z	
+2026-07-07T00:56:15.957Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:15.958Z	Next.js version : 16.1.3
+2026-07-07T00:56:15.959Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:15.959Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:15.960Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:15.961Z	
+2026-07-07T00:56:15.961Z	┌─────────────────────────────────┐
+2026-07-07T00:56:15.961Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:15.962Z	└─────────────────────────────────┘
+2026-07-07T00:56:15.964Z	
+2026-07-07T00:56:15.974Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:17.668Z	
+2026-07-07T00:56:17.669Z	┌─────────────────────────────┐
+2026-07-07T00:56:17.669Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:17.670Z	└─────────────────────────────┘
+2026-07-07T00:56:17.670Z	
+2026-07-07T00:56:17.783Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:17.783Z	Next.js version : 16.1.3
+2026-07-07T00:56:17.789Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:17.789Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:17.792Z	
+2026-07-07T00:56:17.792Z	┌─────────────────────────────────┐
+2026-07-07T00:56:17.792Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:17.792Z	└─────────────────────────────────┘
+2026-07-07T00:56:17.793Z	
+2026-07-07T00:56:17.793Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:17.800Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:19.644Z	
+2026-07-07T00:56:19.645Z	┌─────────────────────────────┐
+2026-07-07T00:56:19.645Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:19.646Z	└─────────────────────────────┘
+2026-07-07T00:56:19.646Z	
+2026-07-07T00:56:19.746Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:19.746Z	Next.js version : 16.1.3
+2026-07-07T00:56:19.747Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:19.747Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:19.747Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:19.750Z	
+2026-07-07T00:56:19.750Z	┌─────────────────────────────────┐
+2026-07-07T00:56:19.750Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:19.750Z	└─────────────────────────────────┘
+2026-07-07T00:56:19.750Z	
+2026-07-07T00:56:19.758Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:21.978Z	
+2026-07-07T00:56:21.979Z	┌─────────────────────────────┐
+2026-07-07T00:56:21.979Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:21.979Z	└─────────────────────────────┘
+2026-07-07T00:56:21.979Z	
+2026-07-07T00:56:22.122Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:22.122Z	Next.js version : 16.1.3
+2026-07-07T00:56:22.124Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:22.124Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:22.125Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:22.127Z	
+2026-07-07T00:56:22.127Z	┌─────────────────────────────────┐
+2026-07-07T00:56:22.127Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:22.127Z	└─────────────────────────────────┘
+2026-07-07T00:56:22.127Z	
+2026-07-07T00:56:22.141Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:24.490Z	
+2026-07-07T00:56:24.490Z	┌─────────────────────────────┐
+2026-07-07T00:56:24.490Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:24.490Z	└─────────────────────────────┘
+2026-07-07T00:56:24.490Z	
+2026-07-07T00:56:24.629Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:24.629Z	Next.js version : 16.1.3
+2026-07-07T00:56:24.631Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:24.631Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:24.631Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:24.634Z	
+2026-07-07T00:56:24.634Z	┌─────────────────────────────────┐
+2026-07-07T00:56:24.634Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:24.634Z	└─────────────────────────────────┘
+2026-07-07T00:56:24.634Z	
+2026-07-07T00:56:24.643Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:26.990Z	
+2026-07-07T00:56:26.990Z	┌─────────────────────────────┐
+2026-07-07T00:56:26.990Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:26.990Z	└─────────────────────────────┘
+2026-07-07T00:56:26.990Z	
+2026-07-07T00:56:27.118Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:27.119Z	Next.js version : 16.1.3
+2026-07-07T00:56:27.120Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:27.121Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:27.121Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:27.126Z	
+2026-07-07T00:56:27.126Z	┌─────────────────────────────────┐
+2026-07-07T00:56:27.126Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:27.126Z	└─────────────────────────────────┘
+2026-07-07T00:56:27.126Z	
+2026-07-07T00:56:27.138Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:29.625Z	
+2026-07-07T00:56:29.625Z	┌─────────────────────────────┐
+2026-07-07T00:56:29.625Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:29.625Z	└─────────────────────────────┘
+2026-07-07T00:56:29.625Z	
+2026-07-07T00:56:29.766Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:29.768Z	Next.js version : 16.1.3
+2026-07-07T00:56:29.769Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:29.770Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:29.770Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:29.773Z	
+2026-07-07T00:56:29.774Z	┌─────────────────────────────────┐
+2026-07-07T00:56:29.774Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:29.774Z	└─────────────────────────────────┘
+2026-07-07T00:56:29.774Z	
+2026-07-07T00:56:29.786Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:32.039Z	
+2026-07-07T00:56:32.039Z	┌─────────────────────────────┐
+2026-07-07T00:56:32.039Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:32.039Z	└─────────────────────────────┘
+2026-07-07T00:56:32.039Z	
+2026-07-07T00:56:32.175Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:32.175Z	Next.js version : 16.1.3
+2026-07-07T00:56:32.177Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:32.177Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:32.178Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:32.181Z	
+2026-07-07T00:56:32.181Z	┌─────────────────────────────────┐
+2026-07-07T00:56:32.181Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:32.181Z	└─────────────────────────────────┘
+2026-07-07T00:56:32.181Z	
+2026-07-07T00:56:32.195Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:34.627Z	
+2026-07-07T00:56:34.630Z	┌─────────────────────────────┐
+2026-07-07T00:56:34.630Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:34.631Z	└─────────────────────────────┘
+2026-07-07T00:56:34.631Z	
+2026-07-07T00:56:34.786Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:34.786Z	Next.js version : 16.1.3
+2026-07-07T00:56:34.789Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:34.789Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:34.790Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:34.794Z	
+2026-07-07T00:56:34.794Z	┌─────────────────────────────────┐
+2026-07-07T00:56:34.794Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:34.794Z	└─────────────────────────────────┘
+2026-07-07T00:56:34.794Z	
+2026-07-07T00:56:34.811Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:37.169Z	
+2026-07-07T00:56:37.169Z	┌─────────────────────────────┐
+2026-07-07T00:56:37.169Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:37.169Z	└─────────────────────────────┘
+2026-07-07T00:56:37.169Z	
+2026-07-07T00:56:37.315Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:37.317Z	Next.js version : 16.1.3
+2026-07-07T00:56:37.319Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:37.322Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:37.322Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:37.323Z	
+2026-07-07T00:56:37.323Z	┌─────────────────────────────────┐
+2026-07-07T00:56:37.323Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:37.323Z	└─────────────────────────────────┘
+2026-07-07T00:56:37.323Z	
+2026-07-07T00:56:37.337Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:41.493Z	
+2026-07-07T00:56:41.493Z	┌─────────────────────────────┐
+2026-07-07T00:56:41.493Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:41.493Z	└─────────────────────────────┘
+2026-07-07T00:56:41.493Z	
+2026-07-07T00:56:41.734Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:41.734Z	Next.js version : 16.1.3
+2026-07-07T00:56:41.736Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:41.736Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:41.736Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:41.739Z	
+2026-07-07T00:56:41.739Z	┌─────────────────────────────────┐
+2026-07-07T00:56:41.739Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:41.739Z	└─────────────────────────────────┘
+2026-07-07T00:56:41.739Z	
+2026-07-07T00:56:41.752Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:43.876Z	
+2026-07-07T00:56:43.876Z	┌─────────────────────────────┐
+2026-07-07T00:56:43.876Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:43.877Z	└─────────────────────────────┘
+2026-07-07T00:56:43.877Z	
+2026-07-07T00:56:44.005Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:44.006Z	Next.js version : 16.1.3
+2026-07-07T00:56:44.007Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:44.007Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:44.007Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:44.009Z	
+2026-07-07T00:56:44.009Z	┌─────────────────────────────────┐
+2026-07-07T00:56:44.009Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:44.010Z	└─────────────────────────────────┘
+2026-07-07T00:56:44.010Z	
+2026-07-07T00:56:44.021Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:46.088Z	
+2026-07-07T00:56:46.088Z	┌─────────────────────────────┐
+2026-07-07T00:56:46.088Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:46.088Z	└─────────────────────────────┘
+2026-07-07T00:56:46.088Z	
+2026-07-07T00:56:46.241Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:46.241Z	Next.js version : 16.1.3
+2026-07-07T00:56:46.244Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:46.244Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:46.244Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:46.247Z	
+2026-07-07T00:56:46.247Z	┌─────────────────────────────────┐
+2026-07-07T00:56:46.247Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:46.248Z	└─────────────────────────────────┘
+2026-07-07T00:56:46.248Z	
+2026-07-07T00:56:46.259Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:48.681Z	
+2026-07-07T00:56:48.682Z	┌─────────────────────────────┐
+2026-07-07T00:56:48.683Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:48.683Z	└─────────────────────────────┘
+2026-07-07T00:56:48.683Z	
+2026-07-07T00:56:48.817Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:48.818Z	Next.js version : 16.1.3
+2026-07-07T00:56:48.820Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:48.820Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:48.821Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:48.823Z	
+2026-07-07T00:56:48.823Z	┌─────────────────────────────────┐
+2026-07-07T00:56:48.824Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:48.824Z	└─────────────────────────────────┘
+2026-07-07T00:56:48.824Z	
+2026-07-07T00:56:48.835Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:51.182Z	
+2026-07-07T00:56:51.182Z	┌─────────────────────────────┐
+2026-07-07T00:56:51.183Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:51.187Z	└─────────────────────────────┘
+2026-07-07T00:56:51.187Z	
+2026-07-07T00:56:51.321Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:51.322Z	Next.js version : 16.1.3
+2026-07-07T00:56:51.323Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:51.323Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:51.324Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:51.326Z	
+2026-07-07T00:56:51.326Z	┌─────────────────────────────────┐
+2026-07-07T00:56:51.326Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:51.326Z	└─────────────────────────────────┘
+2026-07-07T00:56:51.326Z	
+2026-07-07T00:56:51.343Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:53.651Z	
+2026-07-07T00:56:53.651Z	┌─────────────────────────────┐
+2026-07-07T00:56:53.651Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:53.651Z	└─────────────────────────────┘
+2026-07-07T00:56:53.651Z	
+2026-07-07T00:56:53.810Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:53.811Z	Next.js version : 16.1.3
+2026-07-07T00:56:53.813Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:53.813Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:53.813Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:53.816Z	
+2026-07-07T00:56:53.816Z	┌─────────────────────────────────┐
+2026-07-07T00:56:53.816Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:53.816Z	└─────────────────────────────────┘
+2026-07-07T00:56:53.816Z	
+2026-07-07T00:56:53.829Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:56.057Z	
+2026-07-07T00:56:56.057Z	┌─────────────────────────────┐
+2026-07-07T00:56:56.058Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:56.058Z	└─────────────────────────────┘
+2026-07-07T00:56:56.058Z	
+2026-07-07T00:56:56.190Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:56.191Z	Next.js version : 16.1.3
+2026-07-07T00:56:56.192Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:56.192Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:56.193Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:56.196Z	
+2026-07-07T00:56:56.196Z	┌─────────────────────────────────┐
+2026-07-07T00:56:56.196Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:56.196Z	└─────────────────────────────────┘
+2026-07-07T00:56:56.196Z	
+2026-07-07T00:56:56.206Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:58.181Z	
+2026-07-07T00:56:58.181Z	┌─────────────────────────────┐
+2026-07-07T00:56:58.181Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:58.181Z	└─────────────────────────────┘
+2026-07-07T00:56:58.181Z	
+2026-07-07T00:56:58.308Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:58.308Z	Next.js version : 16.1.3
+2026-07-07T00:56:58.310Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:58.310Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:58.310Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:58.313Z	
+2026-07-07T00:56:58.313Z	┌─────────────────────────────────┐
+2026-07-07T00:56:58.313Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:58.313Z	└─────────────────────────────────┘
+2026-07-07T00:56:58.313Z	
+2026-07-07T00:56:58.326Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:00.421Z	
+2026-07-07T00:57:00.421Z	┌─────────────────────────────┐
+2026-07-07T00:57:00.421Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:00.421Z	└─────────────────────────────┘
+2026-07-07T00:57:00.421Z	
+2026-07-07T00:57:00.587Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:00.587Z	Next.js version : 16.1.3
+2026-07-07T00:57:00.589Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:00.590Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:00.590Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:00.592Z	
+2026-07-07T00:57:00.592Z	┌─────────────────────────────────┐
+2026-07-07T00:57:00.592Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:00.592Z	└─────────────────────────────────┘
+2026-07-07T00:57:00.592Z	
+2026-07-07T00:57:00.606Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:02.853Z	
+2026-07-07T00:57:02.853Z	┌─────────────────────────────┐
+2026-07-07T00:57:02.854Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:02.854Z	└─────────────────────────────┘
+2026-07-07T00:57:02.854Z	
+2026-07-07T00:57:03.000Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:03.000Z	Next.js version : 16.1.3
+2026-07-07T00:57:03.002Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:03.002Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:03.002Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:03.005Z	
+2026-07-07T00:57:03.005Z	┌─────────────────────────────────┐
+2026-07-07T00:57:03.005Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:03.005Z	└─────────────────────────────────┘
+2026-07-07T00:57:03.005Z	
+2026-07-07T00:57:03.019Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:05.462Z	
+2026-07-07T00:57:05.462Z	┌─────────────────────────────┐
+2026-07-07T00:57:05.462Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:05.462Z	└─────────────────────────────┘
+2026-07-07T00:57:05.463Z	
+2026-07-07T00:55:46.307Z	Initializing build environment...
+2026-07-07T00:55:47.865Z	Success: Finished initializing build environment
+2026-07-07T00:55:48.434Z	Cloning repository...
+2026-07-07T00:55:50.716Z	Restoring from dependencies cache
+2026-07-07T00:55:50.718Z	Restoring from build output cache
+2026-07-07T00:55:50.721Z	Detected the following tools from environment: bun@1.2.15, nodejs@22.16.0
+2026-07-07T00:55:50.854Z	Installing project dependencies: bun install --frozen-lockfile
+2026-07-07T00:55:52.645Z	bun install v1.2.15 (df017990)
+2026-07-07T00:56:13.677Z	
+2026-07-07T00:56:13.677Z	+ @opennextjs/cloudflare@1.20.1
+2026-07-07T00:56:13.677Z	+ @tailwindcss/postcss@4.1.18
+2026-07-07T00:56:13.677Z	+ @types/react@19.2.8
+2026-07-07T00:56:13.678Z	+ @types/react-dom@19.2.3
+2026-07-07T00:56:13.678Z	+ bun-types@1.3.6
+2026-07-07T00:56:13.678Z	+ eslint@9.39.2
+2026-07-07T00:56:13.678Z	+ eslint-config-next@16.1.3
+2026-07-07T00:56:13.679Z	+ tailwindcss@4.1.18
+2026-07-07T00:56:13.679Z	+ tw-animate-css@1.4.0
+2026-07-07T00:56:13.679Z	+ typescript@5.9.3
+2026-07-07T00:56:13.679Z	+ wrangler@4.107.0
+2026-07-07T00:56:13.679Z	+ @dnd-kit/core@6.3.1
+2026-07-07T00:56:13.679Z	+ @dnd-kit/sortable@10.0.0
+2026-07-07T00:56:13.679Z	+ @dnd-kit/utilities@3.2.2
+2026-07-07T00:56:13.680Z	+ @hookform/resolvers@5.2.2
+2026-07-07T00:56:13.680Z	+ @libsql/client@0.17.4
+2026-07-07T00:56:13.680Z	+ @mdxeditor/editor@3.52.3
+2026-07-07T00:56:13.680Z	+ @prisma/adapter-libsql@7.8.0
+2026-07-07T00:56:13.681Z	+ @prisma/client@6.19.2
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-accordion@1.2.12
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-alert-dialog@1.1.15
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-aspect-ratio@1.1.8
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-avatar@1.1.11
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-checkbox@1.3.3
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-collapsible@1.1.12
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-context-menu@2.2.16
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-dialog@1.1.15
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-dropdown-menu@2.1.16
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-hover-card@1.1.15
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-label@2.1.8
+2026-07-07T00:56:13.682Z	+ @radix-ui/react-menubar@1.1.16
+2026-07-07T00:56:13.683Z	+ @radix-ui/react-navigation-menu@1.2.14
+2026-07-07T00:56:13.683Z	+ @radix-ui/react-popover@1.1.15
+2026-07-07T00:56:13.683Z	+ @radix-ui/react-progress@1.1.8
+2026-07-07T00:56:13.683Z	+ @radix-ui/react-radio-group@1.3.8
+2026-07-07T00:56:13.683Z	+ @radix-ui/react-scroll-area@1.2.10
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-select@2.2.6
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-separator@1.1.8
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-slider@1.3.6
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-slot@1.2.4
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-switch@1.2.6
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-tabs@1.1.13
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-toast@1.2.15
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-toggle@1.1.10
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-toggle-group@1.1.11
+2026-07-07T00:56:13.684Z	+ @radix-ui/react-tooltip@1.2.8
+2026-07-07T00:56:13.684Z	+ @reactuses/core@6.1.9
+2026-07-07T00:56:13.684Z	+ @tanstack/react-query@5.90.19
+2026-07-07T00:56:13.684Z	+ @tanstack/react-table@8.21.3
+2026-07-07T00:56:13.684Z	+ class-variance-authority@0.7.1
+2026-07-07T00:56:13.685Z	+ clsx@2.1.1
+2026-07-07T00:56:13.685Z	+ cmdk@1.1.1
+2026-07-07T00:56:13.685Z	+ date-fns@4.1.0
+2026-07-07T00:56:13.685Z	+ embla-carousel-react@8.6.0
+2026-07-07T00:56:13.685Z	+ framer-motion@12.26.2
+2026-07-07T00:56:13.685Z	+ input-otp@1.4.2
+2026-07-07T00:56:13.685Z	+ lucide-react@0.525.0
+2026-07-07T00:56:13.685Z	+ next@16.1.3
+2026-07-07T00:56:13.685Z	+ next-auth@4.24.13
+2026-07-07T00:56:13.685Z	+ next-intl@4.7.0
+2026-07-07T00:56:13.685Z	+ next-themes@0.4.6
+2026-07-07T00:56:13.685Z	+ prisma@6.19.2
+2026-07-07T00:56:13.685Z	+ react@19.2.3
+2026-07-07T00:56:13.686Z	+ react-day-picker@9.13.0
+2026-07-07T00:56:13.686Z	+ react-dom@19.2.3
+2026-07-07T00:56:13.686Z	+ react-hook-form@7.71.1
+2026-07-07T00:56:13.687Z	+ react-markdown@10.1.0
+2026-07-07T00:56:13.687Z	+ react-resizable-panels@3.0.6
+2026-07-07T00:56:13.687Z	+ react-syntax-highlighter@15.6.6
+2026-07-07T00:56:13.687Z	+ recharts@2.15.4
+2026-07-07T00:56:13.687Z	+ sharp@0.34.5
+2026-07-07T00:56:13.688Z	+ sonner@2.0.7
+2026-07-07T00:56:13.688Z	+ tailwind-merge@3.4.0
+2026-07-07T00:56:13.688Z	+ tailwindcss-animate@1.0.7
+2026-07-07T00:56:13.688Z	+ uuid@11.1.0
+2026-07-07T00:56:13.688Z	+ vaul@1.1.2
+2026-07-07T00:56:13.688Z	+ z-ai-web-dev-sdk@0.0.18
+2026-07-07T00:56:13.688Z	+ zod@4.3.5
+2026-07-07T00:56:13.688Z	+ zustand@5.0.10
+2026-07-07T00:56:13.688Z	
+2026-07-07T00:56:13.688Z	1106 packages installed [21.11s]
+2026-07-07T00:56:13.846Z	Executing user build command: bun run build
+2026-07-07T00:56:13.966Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:15.835Z	
+2026-07-07T00:56:15.835Z	┌─────────────────────────────┐
+2026-07-07T00:56:15.835Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:15.835Z	└─────────────────────────────┘
+2026-07-07T00:56:15.835Z	
+2026-07-07T00:56:15.957Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:15.958Z	Next.js version : 16.1.3
+2026-07-07T00:56:15.959Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:15.959Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:15.960Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:15.961Z	
+2026-07-07T00:56:15.961Z	┌─────────────────────────────────┐
+2026-07-07T00:56:15.961Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:15.962Z	└─────────────────────────────────┘
+2026-07-07T00:56:15.964Z	
+2026-07-07T00:56:15.974Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:17.668Z	
+2026-07-07T00:56:17.669Z	┌─────────────────────────────┐
+2026-07-07T00:56:17.669Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:17.670Z	└─────────────────────────────┘
+2026-07-07T00:56:17.670Z	
+2026-07-07T00:56:17.783Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:17.783Z	Next.js version : 16.1.3
+2026-07-07T00:56:17.789Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:17.789Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:17.792Z	
+2026-07-07T00:56:17.792Z	┌─────────────────────────────────┐
+2026-07-07T00:56:17.792Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:17.792Z	└─────────────────────────────────┘
+2026-07-07T00:56:17.793Z	
+2026-07-07T00:56:17.793Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:17.800Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:19.644Z	
+2026-07-07T00:56:19.645Z	┌─────────────────────────────┐
+2026-07-07T00:56:19.645Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:19.646Z	└─────────────────────────────┘
+2026-07-07T00:56:19.646Z	
+2026-07-07T00:56:19.746Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:19.746Z	Next.js version : 16.1.3
+2026-07-07T00:56:19.747Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:19.747Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:19.747Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:19.750Z	
+2026-07-07T00:56:19.750Z	┌─────────────────────────────────┐
+2026-07-07T00:56:19.750Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:19.750Z	└─────────────────────────────────┘
+2026-07-07T00:56:19.750Z	
+2026-07-07T00:56:19.758Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:21.978Z	
+2026-07-07T00:56:21.979Z	┌─────────────────────────────┐
+2026-07-07T00:56:21.979Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:21.979Z	└─────────────────────────────┘
+2026-07-07T00:56:21.979Z	
+2026-07-07T00:56:22.122Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:22.122Z	Next.js version : 16.1.3
+2026-07-07T00:56:22.124Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:22.124Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:22.125Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:22.127Z	
+2026-07-07T00:56:22.127Z	┌─────────────────────────────────┐
+2026-07-07T00:56:22.127Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:22.127Z	└─────────────────────────────────┘
+2026-07-07T00:56:22.127Z	
+2026-07-07T00:56:22.141Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:24.490Z	
+2026-07-07T00:56:24.490Z	┌─────────────────────────────┐
+2026-07-07T00:56:24.490Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:24.490Z	└─────────────────────────────┘
+2026-07-07T00:56:24.490Z	
+2026-07-07T00:56:24.629Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:24.629Z	Next.js version : 16.1.3
+2026-07-07T00:56:24.631Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:24.631Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:24.631Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:24.634Z	
+2026-07-07T00:56:24.634Z	┌─────────────────────────────────┐
+2026-07-07T00:56:24.634Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:24.634Z	└─────────────────────────────────┘
+2026-07-07T00:56:24.634Z	
+2026-07-07T00:56:24.643Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:26.990Z	
+2026-07-07T00:56:26.990Z	┌─────────────────────────────┐
+2026-07-07T00:56:26.990Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:26.990Z	└─────────────────────────────┘
+2026-07-07T00:56:26.990Z	
+2026-07-07T00:56:27.118Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:27.119Z	Next.js version : 16.1.3
+2026-07-07T00:56:27.120Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:27.121Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:27.121Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:27.126Z	
+2026-07-07T00:56:27.126Z	┌─────────────────────────────────┐
+2026-07-07T00:56:27.126Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:27.126Z	└─────────────────────────────────┘
+2026-07-07T00:56:27.126Z	
+2026-07-07T00:56:27.138Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:29.625Z	
+2026-07-07T00:56:29.625Z	┌─────────────────────────────┐
+2026-07-07T00:56:29.625Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:29.625Z	└─────────────────────────────┘
+2026-07-07T00:56:29.625Z	
+2026-07-07T00:56:29.766Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:29.768Z	Next.js version : 16.1.3
+2026-07-07T00:56:29.769Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:29.770Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:29.770Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:29.773Z	
+2026-07-07T00:56:29.774Z	┌─────────────────────────────────┐
+2026-07-07T00:56:29.774Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:29.774Z	└─────────────────────────────────┘
+2026-07-07T00:56:29.774Z	
+2026-07-07T00:56:29.786Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:32.039Z	
+2026-07-07T00:56:32.039Z	┌─────────────────────────────┐
+2026-07-07T00:56:32.039Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:32.039Z	└─────────────────────────────┘
+2026-07-07T00:56:32.039Z	
+2026-07-07T00:56:32.175Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:32.175Z	Next.js version : 16.1.3
+2026-07-07T00:56:32.177Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:32.177Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:32.178Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:32.181Z	
+2026-07-07T00:56:32.181Z	┌─────────────────────────────────┐
+2026-07-07T00:56:32.181Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:32.181Z	└─────────────────────────────────┘
+2026-07-07T00:56:32.181Z	
+2026-07-07T00:56:32.195Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:34.627Z	
+2026-07-07T00:56:34.630Z	┌─────────────────────────────┐
+2026-07-07T00:56:34.630Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:34.631Z	└─────────────────────────────┘
+2026-07-07T00:56:34.631Z	
+2026-07-07T00:56:34.786Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:34.786Z	Next.js version : 16.1.3
+2026-07-07T00:56:34.789Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:34.789Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:34.790Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:34.794Z	
+2026-07-07T00:56:34.794Z	┌─────────────────────────────────┐
+2026-07-07T00:56:34.794Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:34.794Z	└─────────────────────────────────┘
+2026-07-07T00:56:34.794Z	
+2026-07-07T00:56:34.811Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:37.169Z	
+2026-07-07T00:56:37.169Z	┌─────────────────────────────┐
+2026-07-07T00:56:37.169Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:37.169Z	└─────────────────────────────┘
+2026-07-07T00:56:37.169Z	
+2026-07-07T00:56:37.315Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:37.317Z	Next.js version : 16.1.3
+2026-07-07T00:56:37.319Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:37.322Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:37.322Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:37.323Z	
+2026-07-07T00:56:37.323Z	┌─────────────────────────────────┐
+2026-07-07T00:56:37.323Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:37.323Z	└─────────────────────────────────┘
+2026-07-07T00:56:37.323Z	
+2026-07-07T00:56:37.337Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:41.493Z	
+2026-07-07T00:56:41.493Z	┌─────────────────────────────┐
+2026-07-07T00:56:41.493Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:41.493Z	└─────────────────────────────┘
+2026-07-07T00:56:41.493Z	
+2026-07-07T00:56:41.734Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:41.734Z	Next.js version : 16.1.3
+2026-07-07T00:56:41.736Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:41.736Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:41.736Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:41.739Z	
+2026-07-07T00:56:41.739Z	┌─────────────────────────────────┐
+2026-07-07T00:56:41.739Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:41.739Z	└─────────────────────────────────┘
+2026-07-07T00:56:41.739Z	
+2026-07-07T00:56:41.752Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:43.876Z	
+2026-07-07T00:56:43.876Z	┌─────────────────────────────┐
+2026-07-07T00:56:43.876Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:43.877Z	└─────────────────────────────┘
+2026-07-07T00:56:43.877Z	
+2026-07-07T00:56:44.005Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:44.006Z	Next.js version : 16.1.3
+2026-07-07T00:56:44.007Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:44.007Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:44.007Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:44.009Z	
+2026-07-07T00:56:44.009Z	┌─────────────────────────────────┐
+2026-07-07T00:56:44.009Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:44.010Z	└─────────────────────────────────┘
+2026-07-07T00:56:44.010Z	
+2026-07-07T00:56:44.021Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:46.088Z	
+2026-07-07T00:56:46.088Z	┌─────────────────────────────┐
+2026-07-07T00:56:46.088Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:46.088Z	└─────────────────────────────┘
+2026-07-07T00:56:46.088Z	
+2026-07-07T00:56:46.241Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:46.241Z	Next.js version : 16.1.3
+2026-07-07T00:56:46.244Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:46.244Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:46.244Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:46.247Z	
+2026-07-07T00:56:46.247Z	┌─────────────────────────────────┐
+2026-07-07T00:56:46.247Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:46.248Z	└─────────────────────────────────┘
+2026-07-07T00:56:46.248Z	
+2026-07-07T00:56:46.259Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:48.681Z	
+2026-07-07T00:56:48.682Z	┌─────────────────────────────┐
+2026-07-07T00:56:48.683Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:48.683Z	└─────────────────────────────┘
+2026-07-07T00:56:48.683Z	
+2026-07-07T00:56:48.817Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:48.818Z	Next.js version : 16.1.3
+2026-07-07T00:56:48.820Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:48.820Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:48.821Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:48.823Z	
+2026-07-07T00:56:48.823Z	┌─────────────────────────────────┐
+2026-07-07T00:56:48.824Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:48.824Z	└─────────────────────────────────┘
+2026-07-07T00:56:48.824Z	
+2026-07-07T00:56:48.835Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:51.182Z	
+2026-07-07T00:56:51.182Z	┌─────────────────────────────┐
+2026-07-07T00:56:51.183Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:51.187Z	└─────────────────────────────┘
+2026-07-07T00:56:51.187Z	
+2026-07-07T00:56:51.321Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:51.322Z	Next.js version : 16.1.3
+2026-07-07T00:56:51.323Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:51.323Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:51.324Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:51.326Z	
+2026-07-07T00:56:51.326Z	┌─────────────────────────────────┐
+2026-07-07T00:56:51.326Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:51.326Z	└─────────────────────────────────┘
+2026-07-07T00:56:51.326Z	
+2026-07-07T00:56:51.343Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:53.651Z	
+2026-07-07T00:56:53.651Z	┌─────────────────────────────┐
+2026-07-07T00:56:53.651Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:53.651Z	└─────────────────────────────┘
+2026-07-07T00:56:53.651Z	
+2026-07-07T00:56:53.810Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:53.811Z	Next.js version : 16.1.3
+2026-07-07T00:56:53.813Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:53.813Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:53.813Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:53.816Z	
+2026-07-07T00:56:53.816Z	┌─────────────────────────────────┐
+2026-07-07T00:56:53.816Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:53.816Z	└─────────────────────────────────┘
+2026-07-07T00:56:53.816Z	
+2026-07-07T00:56:53.829Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:56.057Z	
+2026-07-07T00:56:56.057Z	┌─────────────────────────────┐
+2026-07-07T00:56:56.058Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:56.058Z	└─────────────────────────────┘
+2026-07-07T00:56:56.058Z	
+2026-07-07T00:56:56.190Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:56.191Z	Next.js version : 16.1.3
+2026-07-07T00:56:56.192Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:56.192Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:56.193Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:56.196Z	
+2026-07-07T00:56:56.196Z	┌─────────────────────────────────┐
+2026-07-07T00:56:56.196Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:56.196Z	└─────────────────────────────────┘
+2026-07-07T00:56:56.196Z	
+2026-07-07T00:56:56.206Z	$ opennextjs-cloudflare build
+2026-07-07T00:56:58.181Z	
+2026-07-07T00:56:58.181Z	┌─────────────────────────────┐
+2026-07-07T00:56:58.181Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:56:58.181Z	└─────────────────────────────┘
+2026-07-07T00:56:58.181Z	
+2026-07-07T00:56:58.308Z	App directory: /opt/buildhome/repo
+2026-07-07T00:56:58.308Z	Next.js version : 16.1.3
+2026-07-07T00:56:58.310Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:56:58.310Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:56:58.310Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:56:58.313Z	
+2026-07-07T00:56:58.313Z	┌─────────────────────────────────┐
+2026-07-07T00:56:58.313Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:56:58.313Z	└─────────────────────────────────┘
+2026-07-07T00:56:58.313Z	
+2026-07-07T00:56:58.326Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:00.421Z	
+2026-07-07T00:57:00.421Z	┌─────────────────────────────┐
+2026-07-07T00:57:00.421Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:00.421Z	└─────────────────────────────┘
+2026-07-07T00:57:00.421Z	
+2026-07-07T00:57:00.587Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:00.587Z	Next.js version : 16.1.3
+2026-07-07T00:57:00.589Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:00.590Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:00.590Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:00.592Z	
+2026-07-07T00:57:00.592Z	┌─────────────────────────────────┐
+2026-07-07T00:57:00.592Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:00.592Z	└─────────────────────────────────┘
+2026-07-07T00:57:00.592Z	
+2026-07-07T00:57:00.606Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:02.853Z	
+2026-07-07T00:57:02.853Z	┌─────────────────────────────┐
+2026-07-07T00:57:02.854Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:02.854Z	└─────────────────────────────┘
+2026-07-07T00:57:02.854Z	
+2026-07-07T00:57:03.000Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:03.000Z	Next.js version : 16.1.3
+2026-07-07T00:57:03.002Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:03.002Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:03.002Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:03.005Z	
+2026-07-07T00:57:03.005Z	┌─────────────────────────────────┐
+2026-07-07T00:57:03.005Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:03.005Z	└─────────────────────────────────┘
+2026-07-07T00:57:03.005Z	
+2026-07-07T00:57:03.019Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:05.462Z	
+2026-07-07T00:57:05.462Z	┌─────────────────────────────┐
+2026-07-07T00:57:05.462Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:05.462Z	└─────────────────────────────┘
+2026-07-07T00:57:05.463Z	
+2026-07-07T00:57:05.616Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:05.616Z	Next.js version : 16.1.3
+2026-07-07T00:57:05.618Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:05.618Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:05.618Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:05.622Z	
+2026-07-07T00:57:05.622Z	┌─────────────────────────────────┐
+2026-07-07T00:57:05.622Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:05.622Z	└─────────────────────────────────┘
+2026-07-07T00:57:05.622Z	
+2026-07-07T00:57:05.635Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:07.815Z	
+2026-07-07T00:57:07.816Z	┌─────────────────────────────┐
+2026-07-07T00:57:07.816Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:07.816Z	└─────────────────────────────┘
+2026-07-07T00:57:07.816Z	
+2026-07-07T00:57:07.956Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:07.956Z	Next.js version : 16.1.3
+2026-07-07T00:57:07.958Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:07.959Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:07.959Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:07.961Z	
+2026-07-07T00:57:07.961Z	┌─────────────────────────────────┐
+2026-07-07T00:57:07.962Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:07.962Z	└─────────────────────────────────┘
+2026-07-07T00:57:07.962Z	
+2026-07-07T00:57:07.976Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:10.253Z	
+2026-07-07T00:57:10.255Z	┌─────────────────────────────┐
+2026-07-07T00:57:10.256Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:10.256Z	└─────────────────────────────┘
+2026-07-07T00:57:10.257Z	
+2026-07-07T00:57:10.382Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:10.382Z	Next.js version : 16.1.3
+2026-07-07T00:57:10.383Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:10.383Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:10.384Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:10.386Z	
+2026-07-07T00:57:10.386Z	┌─────────────────────────────────┐
+2026-07-07T00:57:10.386Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:10.386Z	└─────────────────────────────────┘
+2026-07-07T00:57:10.386Z	
+2026-07-07T00:57:10.402Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:12.316Z	
+2026-07-07T00:57:12.316Z	┌─────────────────────────────┐
+2026-07-07T00:57:12.316Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:12.316Z	└─────────────────────────────┘
+2026-07-07T00:57:12.316Z	
+2026-07-07T00:57:12.434Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:12.435Z	Next.js version : 16.1.3
+2026-07-07T00:57:12.436Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:12.436Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:12.436Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:12.441Z	
+2026-07-07T00:57:12.441Z	┌─────────────────────────────────┐
+2026-07-07T00:57:12.441Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:12.441Z	└─────────────────────────────────┘
+2026-07-07T00:57:12.441Z	
+2026-07-07T00:57:12.451Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:14.547Z	
+2026-07-07T00:57:14.547Z	┌─────────────────────────────┐
+2026-07-07T00:57:14.548Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:14.548Z	└─────────────────────────────┘
+2026-07-07T00:57:14.548Z	
+2026-07-07T00:57:14.695Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:14.695Z	Next.js version : 16.1.3
+2026-07-07T00:57:14.697Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:14.697Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:14.697Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:14.700Z	
+2026-07-07T00:57:14.701Z	┌─────────────────────────────────┐
+2026-07-07T00:57:14.701Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:14.701Z	└─────────────────────────────────┘
+2026-07-07T00:57:14.701Z	
+2026-07-07T00:57:14.713Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:16.713Z	
+2026-07-07T00:57:16.713Z	┌─────────────────────────────┐
+2026-07-07T00:57:16.713Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:16.713Z	└─────────────────────────────┘
+2026-07-07T00:57:16.713Z	
+2026-07-07T00:57:16.833Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:16.834Z	Next.js version : 16.1.3
+2026-07-07T00:57:16.834Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:16.834Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:16.834Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:16.837Z	
+2026-07-07T00:57:16.838Z	┌─────────────────────────────────┐
+2026-07-07T00:57:16.838Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:16.838Z	└─────────────────────────────────┘
+2026-07-07T00:57:16.838Z	
+2026-07-07T00:57:16.848Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:18.782Z	
+2026-07-07T00:57:18.782Z	┌─────────────────────────────┐
+2026-07-07T00:57:18.782Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:18.782Z	└─────────────────────────────┘
+2026-07-07T00:57:18.782Z	
+2026-07-07T00:57:18.895Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:18.896Z	Next.js version : 16.1.3
+2026-07-07T00:57:18.897Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:18.897Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:18.897Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:18.900Z	
+2026-07-07T00:57:18.900Z	┌─────────────────────────────────┐
+2026-07-07T00:57:18.900Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:18.900Z	└─────────────────────────────────┘
+2026-07-07T00:57:18.900Z	
+2026-07-07T00:57:18.913Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:20.918Z	
+2026-07-07T00:57:20.918Z	┌─────────────────────────────┐
+2026-07-07T00:57:20.918Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:20.919Z	└─────────────────────────────┘
+2026-07-07T00:57:20.920Z	
+2026-07-07T00:57:21.043Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:21.044Z	Next.js version : 16.1.3
+2026-07-07T00:57:21.045Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:21.045Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:21.045Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:21.048Z	
+2026-07-07T00:57:21.048Z	┌─────────────────────────────────┐
+2026-07-07T00:57:21.048Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:21.048Z	└─────────────────────────────────┘
+2026-07-07T00:57:21.048Z	
+2026-07-07T00:57:21.057Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:22.894Z	
+2026-07-07T00:57:22.894Z	┌─────────────────────────────┐
+2026-07-07T00:57:22.894Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:22.894Z	└─────────────────────────────┘
+2026-07-07T00:57:22.894Z	
+2026-07-07T00:57:23.023Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:23.024Z	Next.js version : 16.1.3
+2026-07-07T00:57:23.025Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:23.025Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:23.025Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:23.028Z	
+2026-07-07T00:57:23.028Z	┌─────────────────────────────────┐
+2026-07-07T00:57:23.028Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:23.028Z	└─────────────────────────────────┘
+2026-07-07T00:57:23.028Z	
+2026-07-07T00:57:23.038Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:25.207Z	
+2026-07-07T00:57:25.208Z	┌─────────────────────────────┐
+2026-07-07T00:57:25.208Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:25.208Z	└─────────────────────────────┘
+2026-07-07T00:57:25.208Z	
+2026-07-07T00:57:25.353Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:25.354Z	Next.js version : 16.1.3
+2026-07-07T00:57:25.356Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:25.356Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:25.356Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:25.360Z	
+2026-07-07T00:57:25.360Z	┌─────────────────────────────────┐
+2026-07-07T00:57:25.360Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:25.361Z	└─────────────────────────────────┘
+2026-07-07T00:57:25.361Z	
+2026-07-07T00:57:25.376Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:27.285Z	
+2026-07-07T00:57:27.286Z	┌─────────────────────────────┐
+2026-07-07T00:57:27.286Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:27.286Z	└─────────────────────────────┘
+2026-07-07T00:57:27.286Z	
+2026-07-07T00:57:27.411Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:27.412Z	Next.js version : 16.1.3
+2026-07-07T00:57:27.413Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:27.415Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:27.415Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:27.417Z	
+2026-07-07T00:57:27.417Z	┌─────────────────────────────────┐
+2026-07-07T00:57:27.417Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:27.417Z	└─────────────────────────────────┘
+2026-07-07T00:57:27.417Z	
+2026-07-07T00:57:27.431Z	$ opennextjs-cloudflare build
+2026-07-07T00:57:29.941Z	
+2026-07-07T00:57:29.996Z	┌─────────────────────────────┐
+2026-07-07T00:57:29.999Z	│ OpenNext — Cloudflare build │
+2026-07-07T00:57:29.999Z	└─────────────────────────────┘
+2026-07-07T00:57:30.001Z	
+2026-07-07T00:57:30.682Z	App directory: /opt/buildhome/repo
+2026-07-07T00:57:32.351Z	Next.js version : 16.1.3
+2026-07-07T00:57:32.367Z	@opennextjs/cloudflare version: 1.20.1
+2026-07-07T00:57:32.367Z	@opennextjs/aws version: 4.0.2
+2026-07-07T00:57:32.437Z	
+2026-07-07T00:57:32.438Z	┌─────────────────────────────────┐
+2026-07-07T00:57:32.438Z	│ OpenNext — Building Next.js app │
+2026-07-07T00:57:32.438Z	└─────────────────────────────────┘
+2026-07-07T00:57:32.438Z	
+2026-07-07T00:57:32.440Z	WARN workerd compatibility_date: 2024-09-25, consider updating your wrangler config to a more recent date to benefit from the latest features and fixes.
+2026-07-07T00:57:32.440Z	$ opennextjs-cloudflare build
+2026-07-07T01:16:46.221Z	Build took too long and was timed out
