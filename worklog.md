@@ -78,3 +78,27 @@ Stage Summary:
 - New premium 4-step ImportJourney section replaces the old 9-step version.
 - WhatsApp FAB upgraded with official brand glyph + gradient.
 - Dynamic filtering, stagger animations, and EN/FR/AR language toggle all functional.
+
+---
+Task ID: 20-26
+Agent: main (Z.ai Code)
+Task: Link the project with Cloudflare for deployment.
+
+Work Log:
+- Installed @opennextjs/cloudflare, wrangler, @prisma/adapter-libsql, @libsql/client.
+- Discovered @prisma/adapter-libsql does NOT support file: URLs (only libsql:/https:) — reproduced the URL_INVALID error in a plain bun script.
+- Designed dual-mode db.ts: local file: URLs use standard PrismaClient (built-in SQLite driver), remote libsql:/https: URLs use the libSQL adapter (edge-safe). Same Prisma schema works for both.
+- Implemented lazy Proxy singleton so next build / opennextjs-cloudflare build never crashes when DATABASE_URL isn't loaded during static generation.
+- Wrapped all data.ts queries in safeQuery() — returns empty fallback on DB errors, so the Cloudflare build completes without a live DB connection (verified: 'Worker saved' + 'OpenNext build complete').
+- Created open-next.config.ts (defineCloudflareConfig) + wrangler.jsonc (Workers with static assets, nodejs_compat flag, ASSETS binding).
+- Added cf:build / cf:preview / cf:deploy scripts to package.json.
+- Fixed duplicate trust.title/trust.subtitle i18n collision by renaming the BrandsStrip keys to brands.strip.title/subtitle across EN/FR/AR (eliminated Cloudflare build warnings).
+- Updated .gitignore for .open-next/ and .wrangler/. Updated .env.example with Turso vars + Cloudflare notes.
+- Expanded README with a full Cloudflare + Turso deployment guide (4 steps: create Turso DB, push schema + seed, deploy to Cloudflare via CLI or dashboard, set env vars).
+- Verified: dev server renders 17 vehicle cards with clean console; Cloudflare build completes successfully; source lint clean.
+- Committed (ad88f45) and pushed to https://github.com/khelifadjihad12-blip/orient-auto-export.
+
+Stage Summary:
+- Project is now Cloudflare-ready. The key architectural decision: dual-mode db.ts (standard PrismaClient for local file: SQLite, libSQL adapter for Turso/edge) keeps the Prisma schema 100% identical across environments.
+- Two deployment paths documented: Cloudflare Workers (recommended, edge) and Vercel/Node (classic).
+- For Cloudflare, the user needs to: create a Turso DB, push schema + seed, then either run `bun run cf:deploy` or connect the GitHub repo via the Cloudflare dashboard, and set 4 env vars.
