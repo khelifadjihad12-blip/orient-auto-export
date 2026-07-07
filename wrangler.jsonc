@@ -10,7 +10,8 @@
   },
   "vars": {
     "NEXT_PUBLIC_SITE_URL": "https://orient-auto-export.khelifadjihad12.workers.dev",
-    "DATABASE_URL": "libsql://orient-auto-export-khelifadjihad.aws-eu-west-1.turso.io"
+    "DATABASE_URL": "libsql://orient-auto-export-khelifadjihad.aws-eu-west-1.turso.io",
+    "ADMIN_PASSWORD": "orient2025"
   },
   // Set these as secrets or via the Cloudflare dashboard:
   //   DATABASE_URL        — your Turso libsql:// URL

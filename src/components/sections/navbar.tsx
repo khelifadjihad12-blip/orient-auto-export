@@ -8,9 +8,11 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/s
 import { Wordmark } from "@/components/site/primitives";
 import { LanguageSwitcher } from "@/components/site/language-switcher";
 import { ThemeToggle } from "@/components/site/theme-toggle";
+import { AdminLauncher } from "@/components/admin/admin-launcher";
 import { useI18n } from "@/components/providers/i18n-provider";
 import { useQuoteStore } from "@/lib/quote-store";
 import { cn } from "@/lib/utils";
+import type { PublicBrand } from "@/lib/types";
 
 const NAV_SECTIONS = [
   "brands",
@@ -22,7 +24,7 @@ const NAV_SECTIONS = [
   "contact",
 ] as const;
 
-export function Navbar() {
+export function Navbar({ brands = [] }: { brands?: PublicBrand[] }) {
   const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -79,6 +81,7 @@ export function Navbar() {
           <div className="hidden items-center gap-1 sm:flex">
             <LanguageSwitcher />
             <ThemeToggle />
+            <AdminLauncher brands={brands} />
           </div>
           <Button
             size="sm"
@@ -129,7 +132,10 @@ export function Navbar() {
                 </div>
                 <div className="flex items-center justify-between gap-2 border-t border-border p-4">
                   <LanguageSwitcher />
-                  <ThemeToggle />
+                  <div className="flex items-center gap-1">
+                    <ThemeToggle />
+                    <AdminLauncher brands={brands} />
+                  </div>
                 </div>
                 <div className="border-t border-border p-4">
                   <Button

@@ -49,7 +49,7 @@ export default async function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <StructuredData vehicles={vehicles} faqs={faqs} articles={articles} />
-      <Navbar />
+      <Navbar brands={brands} />
       <main id="main-content" className="flex-1">
         <Hero stats={stats} />
         <BrandsStrip brands={brands} />
