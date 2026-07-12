@@ -20,13 +20,13 @@ const playfair = Playfair_Display({
   weight: ["500", "600", "700", "800"],
 });
 
-const siteUrl = "https://www.orientautoexport.com";
+const siteUrl = "https://www.hakoautomobile.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Orient Auto Export — Brand-New Chinese Vehicle Export to Algeria & North Africa",
-    template: "%s | Orient Auto Export",
+    default: "HAKO AUTOMOBILE — Brand-New Chinese Vehicle Export to Algeria & North Africa",
+    template: "%s | HAKO AUTOMOBILE",
   },
   description:
     "Hong Kong registered automobile trading company exporting brand-new Chinese electric, hybrid and petrol vehicles to Algeria and North Africa. Transparent quotations, documented Incoterms, secure payment and full export documentation.",
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     "vehicle import Algeria",
     "FOB CIF vehicle shipping China",
   ],
-  authors: [{ name: "Orient Auto Export Limited" }],
-  creator: "Orient Auto Export Limited",
-  publisher: "Orient Auto Export Limited",
+  authors: [{ name: "HAKO AUTOMOBILE Limited" }],
+  creator: "HAKO AUTOMOBILE Limited",
+  publisher: "HAKO AUTOMOBILE Limited",
   alternates: {
     canonical: "/",
     languages: {
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     locale: "en",
     alternateLocale: ["fr", "ar"],
     url: siteUrl,
-    siteName: "Orient Auto Export",
-    title: "Orient Auto Export — Brand-New Chinese Vehicle Export to North Africa",
+    siteName: "HAKO AUTOMOBILE",
+    title: "HAKO AUTOMOBILE — Brand-New Chinese Vehicle Export to North Africa",
     description:
       "Hong Kong registered automobile trading company. Sourcing, inspecting, shipping and documenting brand-new Chinese vehicles to Algeria and North Africa with full transparency.",
     images: [
@@ -65,13 +65,13 @@ export const metadata: Metadata = {
         url: "/images/og-cover.png",
         width: 1344,
         height: 768,
-        alt: "Orient Auto Export — Brand-New Chinese Vehicle Export",
+        alt: "HAKO AUTOMOBILE — Brand-New Chinese Vehicle Export",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Orient Auto Export — Brand-New Chinese Vehicle Export to North Africa",
+    title: "HAKO AUTOMOBILE — Brand-New Chinese Vehicle Export to North Africa",
     description:
       "Hong Kong registered automobile trading company exporting brand-new Chinese vehicles to Algeria and North Africa.",
     images: ["/images/og-cover.png"],
@@ -92,8 +92,8 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Orient Auto Export Limited",
-  alternateName: "Orient Auto Export",
+  name: "HAKO AUTOMOBILE Limited",
+  alternateName: "HAKO AUTOMOBILE",
   url: siteUrl,
   logo: `${siteUrl}/images/og-cover.png`,
   description:
@@ -113,7 +113,7 @@ const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    email: "trade@orientautoexport.com",
+    email: "trade@hakoautomobile.com",
     availableLanguage: ["English", "French", "Arabic"],
   },
   sameAs: [],

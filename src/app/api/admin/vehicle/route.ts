@@ -121,14 +121,159 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id");
+
+    if (id) {
+      // Get a single vehicle with full details for editing
+      const result = await db.execute({
+        sql: `SELECT v.*, b.slug as "brandSlug", b.name as "brandName" FROM "Vehicle" v JOIN "Brand" b ON v."brandId" = b.id WHERE v.id = ?`,
+        args: [id],
+      });
+      if (result.rows.length === 0) {
+        return NextResponse.json({ error: "Vehicle not found" }, { status: 404 });
+      }
+      return NextResponse.json({ vehicle: result.rows[0] });
+    }
+
+    // List all vehicles (summary)
     const result = await db.execute(
-      `SELECT v.id, v.slug, v.name, v."energyType", v."priceUsd", v.image, v.featured, b.name as "brandName" FROM "Vehicle" v JOIN "Brand" b ON v."brandId" = b.id ORDER BY v."createdAt" DESC`
+      `SELECT v.id, v.slug, v.name, v."energyType", v."bodyType", v."priceUsd", v.image, v.featured, v.excerpt, b.name as "brandName", b.slug as "brandSlug" FROM "Vehicle" v JOIN "Brand" b ON v."brandId" = b.id ORDER BY v."createdAt" DESC`
     );
     return NextResponse.json({ vehicles: result.rows });
   } catch (err) {
     return NextResponse.json({ error: "Failed to fetch vehicles" }, { status: 500 });
+  }
+}
+
+// ── Edit an existing vehicle ──
+const vehicleUpdateSchema = z.object({
+  id: z.string(),
+  name: z.string().min(1).max(200).optional(),
+  slug: z.string().min(1).max(120).regex(/^[a-z0-9-]+$/).optional(),
+  brandSlug: z.string().min(1).max(120).optional(),
+  energyType: z.enum(["EV", "HYBRID", "PETROL", "DIESEL"]).optional(),
+  bodyType: z.enum(["SEDAN", "SUV", "MPV", "PICKUP", "COUPE"]).optional().nullable(),
+  priceUsd: z.number().min(0).max(1000000).optional(),
+  image: z.string().url().optional().nullable(),
+  excerpt: z.string().min(1).max(500).optional(),
+  description: z.string().min(1).max(5000).optional(),
+  featured: z.boolean().optional(),
+  specs: z.object({
+    engine: z.string().optional(),
+    transmission: z.string().optional(),
+    battery: z.string().optional(),
+    range: z.string().optional(),
+    horsepower: z.string().optional(),
+    topSpeed: z.string().optional(),
+    acceleration: z.string().optional(),
+    dimensions: z.string().optional(),
+    seating: z.string().optional(),
+    features: z.array(z.string()).optional(),
+  }).optional(),
+});
+
+export async function PUT(request: Request) {
+  if (!checkAuth(request)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+
+  const parsed = vehicleUpdateSchema.safeParse(body);
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: "Validation failed", issues: parsed.error.issues },
+      { status: 422 }
+    );
+  }
+
+  const d = parsed.data;
+  const now = new Date().toISOString();
+
+  try {
+    // Resolve brandSlug → brandId if brand is being changed
+    let brandId: string | undefined;
+    if (d.brandSlug) {
+      const brandResult = await db.execute({
+        sql: 'SELECT id FROM "Brand" WHERE slug = ?',
+        args: [d.brandSlug],
+      });
+      if (brandResult.rows.length === 0) {
+        return NextResponse.json(
+          { error: `Brand "${d.brandSlug}" not found` },
+          { status: 404 }
+        );
+      }
+      brandId = brandResult.rows[0].id as string;
+    }
+
+    // Build dynamic SET clause
+    const fields: string[] = ['"updatedAt" = ?'];
+    const args: unknown[] = [now];
+
+    const fieldMap: Record<string, string> = {
+      name: "name",
+      slug: "slug",
+      energyType: '"energyType"',
+      bodyType: '"bodyType"',
+      priceUsd: '"priceUsd"',
+      image: "image",
+      excerpt: "excerpt",
+      description: "description",
+      featured: "featured",
+    };
+
+    for (const [key, col] of Object.entries(fieldMap)) {
+      if (d[key as keyof typeof d] !== undefined) {
+        fields.push(`${col} = ?`);
+        if (key === "featured") {
+          args.push(d.featured ? 1 : 0);
+        } else {
+          args.push((d[key as keyof typeof d] as unknown) ?? null);
+        }
+      }
+    }
+
+    // Handle image → gallery update
+    if (d.image !== undefined) {
+      fields.push('gallery = ?');
+      args.push(JSON.stringify(d.image ? [d.image] : []));
+    }
+
+    // Handle brand change
+    if (brandId) {
+      fields.push('"brandId" = ?');
+      args.push(brandId);
+    }
+
+    // Handle specs
+    if (d.specs !== undefined) {
+      fields.push("specs = ?");
+      args.push(JSON.stringify(d.specs));
+    }
+
+    args.push(d.id);
+
+    await db.execute({
+      sql: `UPDATE "Vehicle" SET ${fields.join(", ")} WHERE id = ?`,
+      args,
+    });
+
+    return NextResponse.json({ success: true, id: d.id });
+  } catch (err) {
+    console.error("[admin/vehicle] update failed", err);
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Failed to update vehicle" },
+      { status: 500 }
+    );
   }
 }
 

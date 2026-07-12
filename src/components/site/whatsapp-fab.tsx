@@ -65,7 +65,7 @@ export function WhatsAppFab() {
                           </span>
                         </span>
                         <div className="flex flex-col leading-tight">
-                          <span className="text-sm font-bold">Trade Desk</span>
+                          <span className="text-sm font-bold">HAKO AUTOMOBILE</span>
                           <span className="text-[0.7rem] text-white/85">
                             Typically replies in ~1 hour
                           </span>

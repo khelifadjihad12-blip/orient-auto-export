@@ -186,6 +186,10 @@ export function VehicleCard({
           </span>
         </div>
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        {/* HAKO AUTOMOBILE watermark */}
+        <span className="absolute bottom-2 end-2 select-none text-[0.6rem] font-bold uppercase tracking-[0.15em] text-white/40 ltr:right-2 rtl:left-2">
+          HAKO
+        </span>
       </button>
 
       {/* Body */}

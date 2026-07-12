@@ -42,7 +42,7 @@ export function Footer() {
   const onLegal = (label: string) =>
     toast.info(`${label}`, {
       description:
-        "This document is available on request. Contact our trade desk at trade@orientautoexport.com to receive the full text.",
+        "This document is available on request. Contact our trade desk at trade@hakoautomobile.com to receive the full text.",
     });
 
   return (
@@ -61,11 +61,11 @@ export function Footer() {
                 Admiralty, Hong Kong
               </span>
               <a
-                href="mailto:trade@orientautoexport.com"
+                href="mailto:trade@hakoautomobile.com"
                 className="inline-flex items-center gap-2 transition-colors hover:text-white"
               >
                 <Mail className="size-4 text-[var(--gold)]" />
-                trade@orientautoexport.com
+                trade@hakoautomobile.com
               </a>
               <a
                 href={buildWhatsAppLink(quoteWhatsAppMessage())}
@@ -74,7 +74,7 @@ export function Footer() {
                 className="inline-flex items-center gap-2 transition-colors hover:text-white"
               >
                 <MessageCircle className="size-4 text-[var(--gold)]" />
-                +852 5987 4400 · WhatsApp
+                +213 780 442 267 · WhatsApp
               </a>
             </div>
           </div>
@@ -143,7 +143,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
           <p>
-            © {new Date().getFullYear()} Orient Auto Export Limited. {t("footer.rights")}
+            © {new Date().getFullYear()} HAKO AUTOMOBILE Limited. {t("footer.rights")}
           </p>
           <p className="flex items-center gap-1.5">
             <span className="inline-block size-1.5 rounded-full bg-emerald-400" />

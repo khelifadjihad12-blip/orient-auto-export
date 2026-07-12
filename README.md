@@ -1,8 +1,8 @@
-# Orient Auto Export — International Automobile Export Platform
+# HAKO AUTOMOBILE — International Automobile Export Platform
 
 A production-grade, enterprise-ready digital platform for a **Hong Kong registered automobile trading company** specializing in exporting **brand-new Chinese vehicles** (electric, hybrid and petrol) to **Algeria and North Africa**, with future expansion across Africa and the Middle East.
 
-> **Orient Auto Export Limited** — sourcing, inspecting, shipping and documenting brand-new Chinese vehicles with the legal and financial transparency that international trade demands.
+> **HAKO AUTOMOBILE Limited** — sourcing, inspecting, shipping and documenting brand-new Chinese vehicles with the legal and financial transparency that international trade demands.
 
 ---
 
@@ -246,4 +246,4 @@ The platform copy intentionally **does not guarantee** regulatory, banking or cu
 
 ## 📄 License
 
-Proprietary — © Orient Auto Export Limited. All rights reserved.
+Proprietary — © HAKO AUTOMOBILE Limited. All rights reserved.

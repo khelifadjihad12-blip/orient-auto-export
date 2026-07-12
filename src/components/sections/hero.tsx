@@ -31,7 +31,7 @@ export function Hero({ stats }: { stats: PlatformStats }) {
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/hero.png"
+          src="/images/hero-hako.png"
           alt=""
           fill
           priority

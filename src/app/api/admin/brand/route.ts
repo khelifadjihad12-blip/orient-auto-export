@@ -99,3 +99,112 @@ export async function GET() {
     return NextResponse.json({ error: "Failed to fetch brands" }, { status: 500 });
   }
 }
+
+// ── Edit a brand ──
+const brandUpdateSchema = z.object({
+  id: z.string(),
+  name: z.string().min(1).max(100).optional(),
+  slug: z.string().min(1).max(100).regex(/^[a-z0-9-]+$/).optional(),
+  country: z.string().max(100).optional(),
+  founded: z.number().int().min(1800).max(2030).optional().nullable(),
+  description: z.string().min(1).max(2000).optional(),
+  history: z.string().max(5000).optional().nullable(),
+  logo: z.string().url().optional().nullable(),
+  heroImage: z.string().url().optional().nullable(),
+});
+
+export async function PUT(request: Request) {
+  if (!checkAuth(request)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+  }
+
+  const parsed = brandUpdateSchema.safeParse(body);
+  if (!parsed.success) {
+    return NextResponse.json(
+      { error: "Validation failed", issues: parsed.error.issues },
+      { status: 422 }
+    );
+  }
+
+  const d = parsed.data;
+  const now = new Date().toISOString();
+
+  try {
+    // Build dynamic SET clause
+    const fields: string[] = ['"updatedAt" = ?'];
+    const args: unknown[] = [now];
+    const fieldMap: Record<string, string> = {
+      name: "name",
+      slug: "slug",
+      country: "country",
+      founded: "founded",
+      description: "description",
+      history: "history",
+      logo: "logo",
+      heroImage: '"heroImage"',
+    };
+    for (const [key, col] of Object.entries(fieldMap)) {
+      if (d[key as keyof typeof d] !== undefined) {
+        fields.push(`${col} = ?`);
+        args.push(d[key as keyof typeof d] ?? null);
+      }
+    }
+    args.push(d.id);
+
+    await db.execute({
+      sql: `UPDATE "Brand" SET ${fields.join(", ")} WHERE id = ?`,
+      args,
+    });
+
+    return NextResponse.json({ success: true, id: d.id });
+  } catch (err) {
+    console.error("[admin/brand] update failed", err);
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Failed to update brand" },
+      { status: 500 }
+    );
+  }
+}
+
+// ── Delete a brand ──
+export async function DELETE(request: Request) {
+  if (!checkAuth(request)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get("id");
+  if (!id) {
+    return NextResponse.json({ error: "Missing id parameter" }, { status: 400 });
+  }
+
+  try {
+    // Check if brand has vehicles
+    const vehicles = await db.execute({
+      sql: 'SELECT COUNT(*) as cnt FROM "Vehicle" WHERE "brandId" = ?',
+      args: [id],
+    });
+    const count = Number((vehicles.rows[0] as { cnt: unknown }).cnt);
+    if (count > 0) {
+      return NextResponse.json(
+        { error: `Cannot delete: brand has ${count} vehicle(s). Delete or reassign them first.` },
+        { status: 409 }
+      );
+    }
+
+    await db.execute({
+      sql: 'DELETE FROM "Brand" WHERE id = ?',
+      args: [id],
+    });
+    return NextResponse.json({ success: true });
+  } catch (err) {
+    return NextResponse.json({ error: "Failed to delete brand" }, { status: 500 });
+  }
+}

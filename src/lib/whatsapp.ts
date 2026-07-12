@@ -6,13 +6,13 @@
  * env var so production deployments can change it without a code edit.
  */
 export const WHATSAPP_NUMBER =
-  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "85259874400";
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "213780442267";
 
-export const WHATSAPP_DISPLAY = "+852 5987 4400";
+export const WHATSAPP_DISPLAY = "+213 780 442 267";
 
 /** Default pre-filled message used by generic WhatsApp CTAs. */
 export const DEFAULT_WHATSAPP_MESSAGE =
-  "Hello Orient Auto Export,\n\nI would like to receive a quotation for importing a brand-new Chinese vehicle to Algeria. Please share your available models, pricing and lead times.\n\nThank you.";
+  "Hello HAKO AUTOMOBILE,\n\nI would like to receive a quotation for importing a brand-new Chinese vehicle to Algeria. Please share your available models, pricing and lead times.\n\nThank you.";
 
 /**
  * Build a wa.me deep link with a pre-filled, URL-encoded message.
@@ -30,7 +30,7 @@ export function vehicleWhatsAppMessage(opts: {
   quantity?: number;
 }): string {
   const lines = [
-    "Hello Orient Auto Export,",
+    "Hello HAKO AUTOMOBILE,",
     "",
     "I am interested in the following vehicle:",
   ];
@@ -45,7 +45,7 @@ export function vehicleWhatsAppMessage(opts: {
 /** Pre-filled message for a general quotation / shipping question. */
 export function quoteWhatsAppMessage(): string {
   return [
-    "Hello Orient Auto Export,",
+    "Hello HAKO AUTOMOBILE,",
     "",
     "I would like to discuss a vehicle import quotation. Could you please advise on:",
     "• Available models and current pricing",

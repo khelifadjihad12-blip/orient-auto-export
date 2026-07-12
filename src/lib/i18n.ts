@@ -1,4 +1,4 @@
-// Internationalisation dictionary for Orient Auto Export.
+// Internationalisation dictionary for HAKO AUTOMOBILE.
 // Supports English (default), French and Arabic (RTL).
 
 export type Locale = "en" | "fr" | "ar";
@@ -15,8 +15,8 @@ export const localeMeta: Record<Locale, { label: string; flag: string; dir: "ltr
 type Dict = Record<string, string>;
 
 const en: Dict = {
-  "brand.name": "Orient Auto Export",
-  "brand.tagline": "Hong Kong • Automobile Export",
+  "brand.name": "HAKO AUTOMOBILE",
+  "brand.tagline": "Hong Kong • Premium Vehicle Export",
 
   "nav.home": "Home",
   "nav.brands": "Brands",
@@ -30,10 +30,10 @@ const en: Dict = {
   "nav.menu": "Menu",
 
   "hero.eyebrow": "Hong Kong Registered Automobile Trading Company",
-  "hero.title": "Exporting Brand-New Chinese Vehicles to North Africa",
-  "hero.titleHighlight": "with Trust and Transparency",
+  "hero.title": "HAKO AUTOMOBILE: Trusted Export of Premium Brand-New Chinese Vehicles to North Africa",
+  "hero.titleHighlight": "with Transparency and Trust",
   "hero.subtitle":
-    "From factory floor to the port of Djendjen, Orient Auto Export is your single counterparty for sourcing, inspecting, shipping and documenting brand-new Chinese electric, hybrid and petrol vehicles — backed by Hong Kong's regulated corporate framework.",
+    "HAKO AUTOMOBILE is your trusted partner for sourcing, inspecting, and exporting brand-new Chinese vehicles directly to Djendjen port in Algeria — backed by Hong Kong's regulated corporate framework and end-to-end documentation.",
   "hero.cta.primary": "Request a Quotation",
   "hero.cta.secondary": "Explore Vehicles",
   "hero.stat.vehicles": "Vehicles Available",
@@ -232,7 +232,7 @@ const en: Dict = {
   "cta.button": "Request a Quotation",
   "cta.contact": "Contact the team",
 
-  "about.eyebrow": "About Orient Auto Export",
+  "about.eyebrow": "About HAKO AUTOMOBILE",
   "about.title": "A Hong Kong Trading House Built for Cross-Border Trust",
   "about.subtitle":
     "Registered in Hong Kong, we operate at the intersection of Chinese manufacturing scale and North African demand — with the legal and financial transparency that international trade demands.",
@@ -282,7 +282,7 @@ const en: Dict = {
     "Every transaction is conducted under a transparent legal structure, with documented compliance and quality controls at each stage of the export journey.",
   "trust.registration.title": "Hong Kong Registered",
   "trust.registration.body":
-    "Orient Auto Export Limited is incorporated in the Hong Kong Special Administrative Region, operating under one of the world's most respected common-law corporate frameworks with transparent public records.",
+    "HAKO AUTOMOBILE Limited is incorporated in the Hong Kong Special Administrative Region, operating under one of the world's most respected common-law corporate frameworks with transparent public records.",
   "trust.compliance.title": "Trade Compliance",
   "trust.compliance.body":
     "Customer due diligence (KYC), sanctions screening and anti-money-laundering (AML) checks are performed on every transaction, in line with applicable Hong Kong regulations.",
@@ -296,7 +296,7 @@ const en: Dict = {
   "trust.stats.units": "Units Shipped",
   "trust.stats.markets": "Markets Served",
   "trust.stats.brands": "Brand Partners",
-  "trust.why.title": "Why Importers Choose Orient Auto Export",
+  "trust.why.title": "Why Importers Choose HAKO AUTOMOBILE",
   "trust.why.subtitle":
     "Five reasons distributors, fleet operators and private buyers across the Maghreb rely on us as their single counterparty.",
   "trust.why1.title": "Single Counterparty",
@@ -361,7 +361,7 @@ const en: Dict = {
   "contact.response.title": "Response Time",
   "contact.response.body": "Our trade desk responds to all enquiries within one business day, Monday to Friday.",
   "contact.registration.title": "Business Registration",
-  "contact.registration.body": "Orient Auto Export Limited · Hong Kong SAR · CR No. available on request.",
+  "contact.registration.body": "HAKO AUTOMOBILE Limited · Hong Kong SAR · CR No. available on request.",
   "contact.whatsapp.title": "WhatsApp Business",
 
   // ── Quote wizard enhancements ──────────────────────────────
@@ -370,8 +370,8 @@ const en: Dict = {
 };
 
 const fr: Dict = {
-  "brand.name": "Orient Auto Export",
-  "brand.tagline": "Hong Kong • Export Automobile",
+  "brand.name": "HAKO AUTOMOBILE",
+  "brand.tagline": "Hong Kong • Export Premium",
 
   "nav.home": "Accueil",
   "nav.brands": "Marques",
@@ -385,10 +385,10 @@ const fr: Dict = {
   "nav.menu": "Menu",
 
   "hero.eyebrow": "Société de Commerce Automobile enregistrée à Hong Kong",
-  "hero.title": "Exportation de Véhicules Chinois Neufs vers l'Afrique du Nord",
-  "hero.titleHighlight": "avec Confiance et Transparence",
+  "hero.title": "HAKO AUTOMOBILE : Export de Confiance de Véhicules Chinois Neufs Premium vers l'Afrique du Nord",
+  "hero.titleHighlight": "avec Transparence et Confiance",
   "hero.subtitle":
-    "De l'usine au port de Djendjen, Orient Auto Export est votre interlocuteur unique pour l'approvisionnement, l'inspection, l'expédition et la documentation de véhicules chinois neufs — électriques, hybrides et thermiques — sous le cadre réglementé de Hong Kong.",
+    "HAKO AUTOMOBILE est votre partenaire de confiance pour le sourcing, l'inspection et l'export de véhicules chinois neufs directement vers le port de Djendjen en Algérie — sous le cadre réglementé de Hong Kong avec une documentation de bout en bout.",
   "hero.cta.primary": "Demander un Devis",
   "hero.cta.secondary": "Voir les Véhicules",
   "hero.stat.vehicles": "Véhicules Disponibles",
@@ -587,7 +587,7 @@ const fr: Dict = {
   "cta.button": "Demander un Devis",
   "cta.contact": "Contacter l'équipe",
 
-  "about.eyebrow": "À Propos d'Orient Auto Export",
+  "about.eyebrow": "À Propos d'HAKO AUTOMOBILE",
   "about.title": "Une Maison de Commerce Hongkongaise Bâtie sur la Confiance",
   "about.subtitle":
     "Enregistrée à Hong Kong, nous opérons à l'intersection de la fabrication chinoise et de la demande nord-africaine — avec la transparence légale et financière qu'exige le commerce international.",
@@ -635,7 +635,7 @@ const fr: Dict = {
     "Chaque transaction est menée sous une structure juridique transparente, avec conformité documentée et contrôles qualité à chaque étape.",
   "trust.registration.title": "Enregistrée à Hong Kong",
   "trust.registration.body":
-    "Orient Auto Export Limited est immatriculée dans la Région Administrative Spéciale de Hong Kong, sous l'un des cadres juridiques common law les plus reconnus au monde.",
+    "HAKO AUTOMOBILE Limited est immatriculée dans la Région Administrative Spéciale de Hong Kong, sous l'un des cadres juridiques common law les plus reconnus au monde.",
   "trust.compliance.title": "Conformité Commerciale",
   "trust.compliance.body":
     "Le KYC, le filtrage des sanctions et les contrôles LBA sont effectués sur chaque transaction, conformément à la réglementation hongkongaise applicable.",
@@ -710,7 +710,7 @@ const fr: Dict = {
   "contact.response.title": "Délai de Réponse",
   "contact.response.body": "Notre desk commercial répond à toutes les demandes sous un jour ouvré, du lundi au vendredi.",
   "contact.registration.title": "Immatriculation",
-  "contact.registration.body": "Orient Auto Export Limited · Hong Kong SAR · RC No. sur demande.",
+  "contact.registration.body": "HAKO AUTOMOBILE Limited · Hong Kong SAR · RC No. sur demande.",
   "contact.whatsapp.title": "WhatsApp Business",
 
   "quote.autosaved": "Brouillon enregistré",
@@ -718,8 +718,8 @@ const fr: Dict = {
 };
 
 const ar: Dict = {
-  "brand.name": "أورينت أوتو إكسبرت",
-  "brand.tagline": "هونغ كونغ • تصدير السيارات",
+  "brand.name": "هاكو أوتوموبيل",
+  "brand.tagline": "هونغ كونغ • تصدير فاخر للسيارات",
 
   "nav.home": "الرئيسية",
   "nav.brands": "العلامات",
@@ -733,10 +733,10 @@ const ar: Dict = {
   "nav.menu": "القائمة",
 
   "hero.eyebrow": "شركة تجارة سيارات مسجلة في هونغ كونغ",
-  "hero.title": "تصدير السيارات الصينية الجديدة إلى شمال إفريقيا",
-  "hero.titleHighlight": "بثقة وشفافية",
+  "hero.title": "هاكو أوتوموبيل: تصدير موثوق للسيارات الصينية الجديدة الفاخرة إلى شمال إفريقيا",
+  "hero.titleHighlight": "بشفافية وثقة",
   "hero.subtitle":
-    "من خط الإنتاج إلى ميناء جنجن، تُعدّ أورينت أوتو إكسبرت طرفك الوحيد لتوريد وفحص وشحن وتوثيق السيارات الصينية الجديدة — كهربائية وهجينة وbenzine — ضمن الإطار التنظيمي لهونغ كونغ.",
+    "هاكو أوتوموبيل هي شريكك الموثوق لتوريد وفحص وتصدير السيارات الصينية الجديدة مباشرة إلى ميناء جنجن في الجزائر — تحت الإطار التنظيمي لهونغ كونغ مع توثيق شامل من البداية إلى النهاية.",
   "hero.cta.primary": "اطلب عرض سعر",
   "hero.cta.secondary": "استعرض المركبات",
   "hero.stat.vehicles": "مركبة متاحة",
@@ -935,7 +935,7 @@ const ar: Dict = {
   "cta.button": "اطلب عرض سعر",
   "cta.contact": "تواصل مع الفريق",
 
-  "about.eyebrow": "عن أورينت أوتو إكسبرت",
+  "about.eyebrow": "عن هاكو أوتوموبيل",
   "about.title": "بيت تجارة هونغ كونغي مبني على الثقة العابرة للحدود",
   "about.subtitle":
     "مسجّلة في هونغ كونغ، نعمل عند تقاطع القدرة التصنيعية الصينية مع الطلب في شمال إفريقيا — بالشفافية القانونية والمالية التي يتطلبها التجارة الدولية.",
@@ -983,7 +983,7 @@ const ar: Dict = {
     "كل معاملة تجري تحت بنية قانونية شفافة، مع امتثال موثّق وضوابط جودة في كل مرحلة من رحلة التصدير.",
   "trust.registration.title": "مسجّلة في هونغ كونغ",
   "trust.registration.body":
-    "أورينت أوتو إكسبرت لميتد مسجّلة في منطقة هونغ كونغ الإدارية الخاصة، وتعمل تحت أحد أكثر الأطر القانونية common law احتراماً عالمياً بسجلات عامة شفافة.",
+    "هاكو أوتوموبيل لميتد مسجّلة في منطقة هونغ كونغ الإدارية الخاصة، وتعمل تحت أحد أكثر الأطر القانونية common law احتراماً عالمياً بسجلات عامة شفافة.",
   "trust.compliance.title": "الامتثال التجاري",
   "trust.compliance.body":
     "تُجرى إجراءات اعرف عميلك وفحص العقوبات ومكافحة غسل الأموال على كل معاملة، وفقاً للأنظمة المعمول بها في هونغ كونغ.",
@@ -1058,7 +1058,7 @@ const ar: Dict = {
   "contact.response.title": "زمن الاستجابة",
   "contact.response.body": "يردّ مكتبنا التجاري على جميع الاستفسارات خلال يوم عمل واحد، من الإثنين إلى الجمعة.",
   "contact.registration.title": "السجل التجاري",
-  "contact.registration.body": "أورينت أوتو إكسبرت لميتد · هونغ كونغ · رقم السجل عند الطلب.",
+  "contact.registration.body": "هاكو أوتوموبيل لميتد · هونغ كونغ · رقم السجل عند الطلب.",
   "contact.whatsapp.title": "واتساب للأعمال",
 
   "quote.autosaved": "تم حفظ المسودة",

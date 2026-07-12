@@ -53,7 +53,7 @@ export function EnergyBadge({
   );
 }
 
-/** The Orient Auto Export wordmark — a navy disc with a gold compass mark. */
+/** The HAKO AUTOMOBILE wordmark — a geometric H icon + HAKO wordmark + AUTOMOBILE below. */
 export function Wordmark({
   className,
   variant = "dark",
@@ -63,44 +63,49 @@ export function Wordmark({
 }) {
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <span className="relative inline-flex size-9 items-center justify-center rounded-lg bg-navy-gradient text-primary-foreground shadow-sm ring-1 ring-white/10">
+      {/* Geometric H icon — stylized hexagonal frame with H letterform */}
+      <span className="relative inline-flex size-10 items-center justify-center rounded-lg bg-navy-gradient shadow-sm ring-1 ring-[var(--gold)]/30">
         <svg
-          viewBox="0 0 24 24"
-          className="size-5"
+          viewBox="0 0 32 32"
+          className="size-6"
           fill="none"
           aria-hidden
         >
+          {/* Hexagonal frame */}
           <path
-            d="M12 2 4 6v6c0 4.4 3.4 8.5 8 10 4.6-1.5 8-5.6 8-10V6l-8-4Z"
-            stroke="currentColor"
-            strokeWidth="1.4"
-            opacity="0.5"
-          />
-          <circle cx="12" cy="11" r="2.4" fill="var(--gold)" />
-          <path
-            d="M12 4v3.6M12 14.4V18M5.5 11h2.6M15.9 11h2.6"
+            d="M16 2 28 9v14L16 30 4 23V9L16 2Z"
             stroke="var(--gold)"
             strokeWidth="1.2"
-            strokeLinecap="round"
+            opacity="0.4"
           />
+          {/* Stylized H letterform */}
+          <path
+            d="M11 9v14M21 9v14M11 16h10"
+            stroke="white"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* Gold accent dot */}
+          <circle cx="16" cy="16" r="1" fill="var(--gold)" />
         </svg>
       </span>
       <span className="flex flex-col leading-none">
         <span
           className={cn(
-            "font-display text-[1.05rem] font-bold tracking-tight",
+            "font-display text-[1.1rem] font-bold tracking-[0.08em]",
             variant === "light" ? "text-white" : "text-foreground"
           )}
         >
-          Orient Auto Export
+          HAKO
         </span>
         <span
           className={cn(
-            "text-[0.62rem] font-medium uppercase tracking-[0.22em]",
-            variant === "light" ? "text-white/55" : "text-muted-foreground"
+            "text-[0.58rem] font-semibold uppercase tracking-[0.3em]",
+            variant === "light" ? "text-[var(--gold)]" : "text-primary"
           )}
         >
-          Hong Kong · Vehicle Export
+          AUTOMOBILE
         </span>
       </span>
     </span>

@@ -1,6 +1,6 @@
 import type { PublicVehicle, PublicFaq, PublicArticle } from "@/lib/types";
 
-const SITE_URL = "https://www.orientautoexport.com";
+const SITE_URL = "https://www.hakoautomobile.com";
 
 /**
  * JSON-LD structured data for SEO. Rendered server-side in the page <head>
@@ -44,7 +44,7 @@ export function StructuredData({
             availability: "https://schema.org/InStock",
             seller: {
               "@type": "Organization",
-              name: "Orient Auto Export Limited",
+              name: "HAKO AUTOMOBILE Limited",
             },
           },
         },
@@ -104,7 +104,7 @@ export function StructuredData({
       },
       publisher: {
         "@type": "Organization",
-        name: "Orient Auto Export Limited",
+        name: "HAKO AUTOMOBILE Limited",
       },
     });
   }

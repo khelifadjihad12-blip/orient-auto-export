@@ -41,6 +41,7 @@
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
   --color-navy: var(--navy);
+  --color-teal: var(--teal);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -50,32 +51,34 @@
 
 :root {
   --radius: 0.75rem;
-  /* Deep Navy Blue primary */
-  --navy: oklch(0.26 0.06 258);
+  /* Rich automotive deep navy blue primary */
+  --navy: oklch(0.22 0.07 258);
   --background: oklch(0.99 0.002 250);
-  --foreground: oklch(0.18 0.02 255);
+  --foreground: oklch(0.15 0.02 258);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 255);
+  --card-foreground: oklch(0.15 0.02 258);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 255);
-  --primary: oklch(0.26 0.06 258);
+  --popover-foreground: oklch(0.15 0.02 258);
+  --primary: oklch(0.22 0.07 258);
   --primary-foreground: oklch(0.98 0.005 250);
-  --secondary: oklch(0.96 0.006 250);
-  --secondary-foreground: oklch(0.26 0.06 258);
+  --secondary: oklch(0.96 0.008 250);
+  --secondary-foreground: oklch(0.22 0.07 258);
   --muted: oklch(0.965 0.004 250);
-  --muted-foreground: oklch(0.48 0.02 255);
-  /* Subtle gold accent */
-  --gold: oklch(0.74 0.13 80);
-  --gold-foreground: oklch(0.2 0.02 80);
-  --accent: oklch(0.93 0.04 75);
-  --accent-foreground: oklch(0.3 0.05 70);
+  --muted-foreground: oklch(0.45 0.02 258);
+  /* Refined gold accent — deeper, more luxurious */
+  --gold: oklch(0.72 0.14 75);
+  --gold-foreground: oklch(0.18 0.02 75);
+  /* Refined teal accent */
+  --teal: oklch(0.58 0.11 195);
+  --accent: oklch(0.93 0.04 195);
+  --accent-foreground: oklch(0.28 0.06 195);
   --destructive: oklch(0.58 0.22 27);
-  --border: oklch(0.91 0.006 255);
-  --input: oklch(0.92 0.005 255);
-  --ring: oklch(0.45 0.05 258);
-  --chart-1: oklch(0.26 0.06 258);
-  --chart-2: oklch(0.74 0.13 80);
-  --chart-3: oklch(0.55 0.12 200);
+  --border: oklch(0.90 0.008 258);
+  --input: oklch(0.91 0.006 258);
+  --ring: oklch(0.40 0.06 258);
+  --chart-1: oklch(0.22 0.07 258);
+  --chart-2: oklch(0.72 0.14 75);
+  --chart-3: oklch(0.58 0.11 195);
   --chart-4: oklch(0.62 0.16 150);
   --chart-5: oklch(0.5 0.18 30);
   --sidebar: oklch(0.985 0.003 250);
@@ -89,30 +92,31 @@
 }
 
 .dark {
-  --navy: oklch(0.3 0.07 258);
-  --background: oklch(0.16 0.015 258);
+  --navy: oklch(0.28 0.08 258);
+  --background: oklch(0.14 0.02 258);
   --foreground: oklch(0.96 0.005 250);
-  --card: oklch(0.21 0.02 258);
+  --card: oklch(0.19 0.025 258);
   --card-foreground: oklch(0.96 0.005 250);
-  --popover: oklch(0.21 0.02 258);
+  --popover: oklch(0.19 0.025 258);
   --popover-foreground: oklch(0.96 0.005 250);
   --primary: oklch(0.92 0.02 250);
-  --primary-foreground: oklch(0.2 0.03 258);
-  --secondary: oklch(0.27 0.02 258);
+  --primary-foreground: oklch(0.18 0.03 258);
+  --secondary: oklch(0.26 0.025 258);
   --secondary-foreground: oklch(0.96 0.005 250);
-  --muted: oklch(0.27 0.02 258);
-  --muted-foreground: oklch(0.7 0.015 255);
-  --gold: oklch(0.78 0.13 80);
-  --gold-foreground: oklch(0.18 0.02 80);
-  --accent: oklch(0.32 0.03 70);
-  --accent-foreground: oklch(0.92 0.06 75);
+  --muted: oklch(0.26 0.025 258);
+  --muted-foreground: oklch(0.7 0.015 258);
+  --gold: oklch(0.76 0.14 75);
+  --gold-foreground: oklch(0.16 0.02 75);
+  --teal: oklch(0.62 0.12 195);
+  --accent: oklch(0.30 0.04 195);
+  --accent-foreground: oklch(0.90 0.08 195);
   --destructive: oklch(0.7 0.19 22);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.65 0.08 258);
+  --ring: oklch(0.62 0.08 258);
   --chart-1: oklch(0.7 0.1 258);
-  --chart-2: oklch(0.78 0.13 80);
-  --chart-3: oklch(0.6 0.12 200);
+  --chart-2: oklch(0.76 0.14 75);
+  --chart-3: oklch(0.62 0.12 195);
   --chart-4: oklch(0.65 0.16 150);
   --chart-5: oklch(0.62 0.18 30);
   --sidebar: oklch(0.19 0.015 258);

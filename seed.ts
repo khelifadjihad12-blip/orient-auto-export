@@ -647,7 +647,7 @@ async function main() {
       country: "Algeria",
       rating: 5,
       quote:
-        "Orient Auto Export handled our 40-unit BYD order end to end — from proforma invoice to customs clearance at Djendjen. The documentation was flawless and the lead time matched the quote exactly.",
+        "HAKO AUTOMOBILE handled our 40-unit BYD order end to end — from proforma invoice to customs clearance at Djendjen. The documentation was flawless and the lead time matched the quote exactly.",
     },
     {
       name: "Yacine Brahimi",
@@ -679,7 +679,7 @@ async function main() {
       country: "Algeria",
       rating: 5,
       quote:
-        "We built our rental fleet entirely with Orient Auto Export. Their after-sales support on spare parts and warranty documentation has been exceptional throughout.",
+        "We built our rental fleet entirely with HAKO AUTOMOBILE. Their after-sales support on spare parts and warranty documentation has been exceptional throughout.",
     },
   ];
   for (const t of testimonials) {
@@ -691,9 +691,9 @@ async function main() {
   const faqs = [
     {
       category: "General",
-      question: "What does Orient Auto Export do?",
+      question: "What does HAKO AUTOMOBILE do?",
       answer:
-        "Orient Auto Export is a Hong Kong registered automobile trading company specialising in the export of brand-new Chinese vehicles — electric, hybrid and petrol — to Algeria and the wider North African region. We act as the single counterparty between Chinese manufacturers and overseas buyers, managing sourcing, quality inspection, documentation, shipping and customs.",
+        "HAKO AUTOMOBILE is a Hong Kong registered automobile trading company specialising in the export of brand-new Chinese vehicles — electric, hybrid and petrol — to Algeria and the wider North African region. We act as the single counterparty between Chinese manufacturers and overseas buyers, managing sourcing, quality inspection, documentation, shipping and customs.",
       order: 1,
     },
     {
@@ -841,10 +841,10 @@ async function main() {
 
   // ── Admin user (demo) ───────────────────────────────────────
   await db.user.upsert({
-    where: { email: "admin@orientautoexport.com" },
+    where: { email: "admin@hakoautomobile.com" },
     update: {},
     create: {
-      email: "admin@orientautoexport.com",
+      email: "admin@hakoautomobile.com",
       name: "Platform Administrator",
       role: "ADMIN",
     },
