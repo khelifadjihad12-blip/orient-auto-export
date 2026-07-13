@@ -1,6 +1,6 @@
 "use client";
 
-import { toast } from "sonner";
+import Link from "next/link";
 import { Mail, MessageCircle, MapPin, ShieldCheck } from "lucide-react";
 import { Wordmark } from "@/components/site/primitives";
 import { useI18n } from "@/components/providers/i18n-provider";
@@ -30,20 +30,14 @@ export function Footer() {
   ];
 
   const legalLinks = [
-    t("footer.privacy"),
-    t("footer.terms"),
-    t("footer.cookies"),
-    t("footer.compliance"),
-    t("footer.aml"),
-    t("footer.kyc"),
-    t("footer.disclaimerLink"),
+    { label: t("footer.privacy"), slug: "privacy-policy" },
+    { label: t("footer.terms"), slug: "terms-of-trade" },
+    { label: t("footer.cookies"), slug: "cookie-policy" },
+    { label: t("footer.compliance"), slug: "trade-compliance-policy" },
+    { label: t("footer.aml"), slug: "aml-policy" },
+    { label: t("footer.kyc"), slug: "kyc-information" },
+    { label: t("footer.disclaimerLink"), slug: "disclaimer" },
   ];
-
-  const onLegal = (label: string) =>
-    toast.info(`${label}`, {
-      description:
-        "This document is available on request. Contact our trade desk at trade@hakoautomobile.com to receive the full text.",
-    });
 
   return (
     <footer className="mt-auto border-t border-border bg-navy-gradient text-white">
@@ -123,13 +117,13 @@ export function Footer() {
               {t("footer.legal")}
             </h3>
             {legalLinks.map((l) => (
-              <button
-                key={l}
-                onClick={() => onLegal(l)}
+              <Link
+                key={l.slug}
+                href={`/legal/${l.slug}`}
                 className="w-fit text-sm text-white/70 transition-colors hover:text-white"
               >
-                {l}
-              </button>
+                {l.label}
+              </Link>
             ))}
           </div>
         </div>
