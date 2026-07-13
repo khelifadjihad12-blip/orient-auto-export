@@ -55,11 +55,11 @@ export function Footer() {
                 Admiralty, Hong Kong
               </span>
               <a
-                href="mailto:trade@hakoautomobile.com"
+                href="mailto:CONTACT@hakoautomobile.com"
                 className="inline-flex items-center gap-2 transition-colors hover:text-white"
               >
                 <Mail className="size-4 text-[var(--gold)]" />
-                trade@hakoautomobile.com
+                CONTACT@hakoautomobile.com
               </a>
               <a
                 href={buildWhatsAppLink(quoteWhatsAppMessage())}

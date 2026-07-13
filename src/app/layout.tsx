@@ -113,7 +113,7 @@ const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    email: "trade@hakoautomobile.com",
+    email: "CONTACT@hakoautomobile.com",
     availableLanguage: ["English", "French", "Arabic"],
   },
   sameAs: [],

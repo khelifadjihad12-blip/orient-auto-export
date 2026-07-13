@@ -67,7 +67,7 @@ export function Contact() {
       label: t("contact.info.address"),
       value: "Suite 1208, Tower One, Lippo Centre,\n89 Queensway, Admiralty, Hong Kong",
     },
-    { icon: Mail, label: t("contact.info.email"), value: "trade@hakoautomobile.com" },
+    { icon: Mail, label: t("contact.info.email"), value: "CONTACT@hakoautomobile.com" },
     { icon: MessageCircle, label: t("contact.info.whatsapp"), value: "+213 780 442 267" },
     { icon: Clock, label: t("contact.info.hours"), value: t("contact.info.hoursValue") },
     { icon: ShieldCheck, label: t("contact.registration.title"), value: t("contact.registration.body") },
