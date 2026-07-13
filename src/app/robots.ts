@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://www.orientautoexport.com/sitemap.xml",
-    host: "https://www.orientautoexport.com",
+    sitemap: "https://orient-auto-export.khelifadjihad12.workers.dev/sitemap.xml",
+    host: "https://orient-auto-export.khelifadjihad12.workers.dev",
   };
 }

@@ -44,7 +44,7 @@ interface AdminModalProps {
   brands: PublicBrand[];
 }
 
-const DEFAULT_PASSWORD = "orient2025";
+const DEFAULT_PASSWORD = "hako2025";
 
 interface VehicleListItem {
   id: string;
@@ -397,7 +397,7 @@ export function AdminModal({ open, onOpenChange, brands }: AdminModalProps) {
               Unlock Admin Panel
             </Button>
             <p className="text-xs text-muted-foreground">
-              Default password is <code className="rounded bg-muted px-1 py-0.5">orient2025</code>.
+              Default password is <code className="rounded bg-muted px-1 py-0.5">hako2025</code>.
               Change it via the <code className="rounded bg-muted px-1 py-0.5">ADMIN_PASSWORD</code> env var.
             </p>
           </div>

@@ -11,7 +11,7 @@
   "vars": {
     "NEXT_PUBLIC_SITE_URL": "https://orient-auto-export.khelifadjihad12.workers.dev",
     "DATABASE_URL": "libsql://orient-auto-export-khelifadjihad.aws-eu-west-1.turso.io",
-    "ADMIN_PASSWORD": "orient2025",
+    "ADMIN_PASSWORD": "hako2025",
     "NEXT_PUBLIC_WHATSAPP_NUMBER": "213780442267"
   },
   // Set these as secrets or via the Cloudflare dashboard:

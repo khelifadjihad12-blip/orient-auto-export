@@ -7,7 +7,7 @@ import { randomUUID } from "crypto";
 // In production, use a strong random password.
 function checkAuth(request: Request): boolean {
   const auth = request.headers.get("x-admin-password");
-  const expected = process.env.ADMIN_PASSWORD || "orient2025";
+  const expected = process.env.ADMIN_PASSWORD || "hako2025";
   return auth === expected;
 }
 
